@@ -272,15 +272,10 @@ section {
   margin: 10px;
   text-align: center;
   border: 1px solid #ddd;
-  /* Add border */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Add box-shadow */
   border-radius: 8px;
-  /* Optional: add border radius */
   padding: 20px;
-  /* Add padding for better spacing */
   background-color: #fff;
-  /* Set background color */
 }
 
 .Modules-item h3 {
