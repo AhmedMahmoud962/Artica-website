@@ -252,15 +252,80 @@ section {
 }
 
 /*  end home section */
+/*  end Module section */
+.Modules {
+  width: 90%;
+  margin: 0 auto;
+  padding: 50px 20px;
+  margin: 20px auto;
+}
+
+.Modules-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.Modules-item {
+  flex: 1 1 calc(30% - 20px);
+  box-sizing: border-box;
+  margin: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  /* Add border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Add box-shadow */
+  border-radius: 8px;
+  /* Optional: add border radius */
+  padding: 20px;
+  /* Add padding for better spacing */
+  background-color: #fff;
+  /* Set background color */
+}
+
+.Modules-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.Modules-item img {
+  width: 200px;
+  height: 200px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .Modules {
+    width: 95%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .Modules-item {
+    flex: 1 1 calc(30% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+
+  .Modules-item {
+    flex: 1 1 100%;
+  }
+}
+
+/*  end Module section */
 
 /* Start section about */
-.about-section {
+.about {
   width: 80%;
   padding: 50px 20px;
+  margin: 20px auto;
+}
+
+.about-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px auto;
 }
 
 .about-section .container-about {
@@ -316,7 +381,7 @@ section {
 
 /* Responsive styles */
 @media (max-width: 768px) {
-  .about-section {
+  .about {
     margin: 20px auto;
     width: 100%;
     padding: 30px;
@@ -451,9 +516,9 @@ section {
 /* start section services */
 .services {
   color: #333;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   padding: 20px;
   margin: 50px;
 }

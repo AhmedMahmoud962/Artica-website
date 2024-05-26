@@ -254,13 +254,16 @@ section {
 /*  end home section */
 
 /* Start section about */
-.about-section {
+.about {
   width: 80%;
   padding: 50px 20px;
+  margin: 20px auto;
+}
+
+.about-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px auto;
 }
 
 .about-section .container-about {
