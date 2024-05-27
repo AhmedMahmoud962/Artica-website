@@ -510,9 +510,6 @@ section {
 /* start section services */
 .services {
   color: #333;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   padding: 20px;
   margin: 50px;
 }
@@ -657,7 +654,7 @@ section {
 /* End section footer */
 /* End section deployment */
 .deployment-section {
-  padding: 60px 20px;
+  padding: 30px 20px;
   margin: 20px 100px;
 }
 
@@ -701,7 +698,7 @@ section {
 }
 @media screen and (max-width: 850px) {
   .deployment-section {
-    padding: 30px 10px;
+    padding: 20px 10px;
     margin: 20px 20px;
   }
   .deployment-title {
