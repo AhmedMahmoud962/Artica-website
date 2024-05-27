@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request a Demo</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+  <section class="demo-section">
+    <h1 class="text-center m-3">Request A Demo </h1>
+    <div class="container col-md-6">
+      <div class="row justify-content-center">
+        <div class="calendar col-md-7">
+          <div class="calendar-header">
+            <span class="month-picker" id="month-picker">February</span>
+            <div class="year-picker">
+              <span class="year-change" id="prev-year">
+                <pre><</pre>
+              </span>
+              <span id="year">2021</span>
+              <span class="year-change" id="next-year">
+                <pre>></pre>
+              </span>
+            </div>
+          </div>
+          <div class="calendar-body">
+            <div class="calendar-week-day">
+              <div>Sun</div>
+              <div>Mon</div>
+              <div>Tue</div>
+              <div>Wed</div>
+              <div>Thu</div>
+              <div>Fri</div>
+              <div>Sat</div>
+            </div>
+            <div class="calendar-days"></div>
+          </div>
+          <div class="calendar-footer">
+            <!-- <div class="toggle">
+              <span>Dark Mode</span>
+              <div class="dark-mode-switch">
+                <div class="dark-mode-switch-ident"></div>
+              </div>
+            </div> -->
+          </div>
+          <div class="month-list"></div>
+        </div>
+        <div class="col-md-5 details-section">
+          <div class="details-header">
+            <h4>Meeting duration</h4>
+            <p>45 mins</p>
+          </div>
+          <div class="time-slots">
+            <h5>What time works best?</h5>
+            <p>Showing times for <strong>May 22, 2024</strong></p>
+            <div class="time-options">
+              <button class="btn btn-outline-primary">12:00 pm</button>
+              <button class="btn btn-outline-primary">12:30 pm</button>
+              <button class="btn btn-outline-primary">1:00 pm</button>
+              <button class="btn btn-outline-primary">3:00 pm</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-1">
+        <a href="#" class="create-meeting-link">Create your free meeting booking page</a>
+      </div>
+      <div class="text-center mt-3">
+        <a href="index.html" class="create-meeting-link">Home Page </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- start footer section  -->
+  <div class="footer">
+    <div class="top">
+      <div>
+        <h1>Artica</h1>
+        <p>Choose your favourita plan.</p>
+      </div>
+      <div>
+        <a href="#" target="blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="#" target="blank">
+          <i class="fa-brands fa-square-github"></i>
+        </a>
+        <a href="#" target="blank">
+          <i class="fa-brands fa-square-whatsapp"></i>
+        </a>
+        <a href="#" target="blank">
+          <i class="fa-brands fa-square-facebook"></i>
+        </a>
+      </div>
+    </div>
+    <div class="bottom">
+      <div>
+        <h4>Project</h4>
+        <a href="#">Changelog</a>
+        <a href="#">Status</a>
+        <a href="#">License</a>
+        <a href="#">All Versions</a>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <a href="#" target="blank">
+          Github
+        </a>
+        <a href="#" target="blank">
+          Issues
+        </a>
+        <a href="#" target="blank">
+          Projects
+        </a>
+        <a href="#" target="blank">
+          Linked In
+        </a>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <a href="#">Support</a>
+        <a href="#">Troubleshooting</a>
+        <a href="#">Contact Us</a>
+        <a href="#">All Versions</a>
+      </div>
+      <div>
+        <h4>Others</h4>
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">License</a>
+      </div>
+    </div>
+  </div>
+  <!-- end footer section  -->
+  <script>
+    let calendar = document.querySelector('.calendar')
+
+    const month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+    isLeapYear = (year) => {
+      return (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) || (year % 100 === 0 && year % 400 === 0)
+    }
+
+    getFebDays = (year) => {
+      return isLeapYear(year) ? 29 : 28
+    }
+
+    generateCalendar = (month, year) => {
+
+      let calendar_days = calendar.querySelector('.calendar-days')
+      let calendar_header_year = calendar.querySelector('#year')
+
+      let days_of_month = [31, getFebDays(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+      calendar_days.innerHTML = ''
+
+      let currDate = new Date()
+      if (!month) month = currDate.getMonth()
+      if (!year) year = currDate.getFullYear()
+
+      let curr_month = `${month_names[month]}`
+      month_picker.innerHTML = curr_month
+      calendar_header_year.innerHTML = year
+
+      // get first day of month
+
+      let first_day = new Date(year, month, 1)
+
+      for (let i = 0; i <= days_of_month[month] + first_day.getDay() - 1; i++) {
+        let day = document.createElement('div')
+        if (i >= first_day.getDay()) {
+          day.classList.add('calendar-day-hover')
+          day.innerHTML = i - first_day.getDay() + 1
+          day.innerHTML += `<span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>`
+          if (i - first_day.getDay() + 1 === currDate.getDate() && year === currDate.getFullYear() && month === currDate.getMonth()) {
+            day.classList.add('curr-date')
+          }
+        }
+        calendar_days.appendChild(day)
+      }
+    }
+
+    let month_list = calendar.querySelector('.month-list')
+
+    month_names.forEach((e, index) => {
+      let month = document.createElement('div')
+      month.innerHTML = `<div data-month="${index}">${e}</div>`
+      month.querySelector('div').onclick = () => {
+        month_list.classList.remove('show')
+        curr_month.value = index
+        generateCalendar(index, curr_year.value)
+      }
+      month_list.appendChild(month)
+    })
+
+    let month_picker = calendar.querySelector('#month-picker')
+
+    month_picker.onclick = () => {
+      month_list.classList.add('show')
+    }
+
+    let currDate = new Date()
+
+    let curr_month = { value: currDate.getMonth() }
+    let curr_year = { value: currDate.getFullYear() }
+
+    generateCalendar(curr_month.value, curr_year.value)
+
+    document.querySelector('#prev-year').onclick = () => {
+      --curr_year.value
+      generateCalendar(curr_month.value, curr_year.value)
+    }
+
+    document.querySelector('#next-year').onclick = () => {
+      ++curr_year.value
+      generateCalendar(curr_month.value, curr_year.value)
+    }
+
+    let dark_mode_toggle = document.querySelector('.dark-mode-switch')
+
+    dark_mode_toggle.onclick = () => {
+      document.querySelector('body').classList.toggle('light')
+      document.querySelector('body').classList.toggle('dark')
+    }
+  </script>
+</body>
+
+</html>
