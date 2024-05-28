@@ -20,10 +20,12 @@ header {
   transition: 0.5s ease;
   /* margin: 10px 0; */
 }
+
 .header {
   background-color: #111;
   padding: 10px 200px;
 }
+
 header .brand {
   color: #fff;
   font-size: 30px;
@@ -530,6 +532,7 @@ section {
   flex: 1 1 25%;
   max-width: 25%;
   background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   border-radius: 10px;
   text-align: left;
@@ -591,8 +594,12 @@ section {
 /* End section services */
 
 /* End section deployment */
+.deployment {
+  background-color: #f2f2f2;
+}
+
 .deployment-section {
-  padding: 30px 20px;
+  padding: 60px 20px;
   margin: 20px 100px;
 }
 
@@ -621,34 +628,41 @@ section {
   color: #555;
   text-align: left;
 }
+
 @media screen and (max-width: 850px) {
   .deployment-section {
     padding: 40px 20px;
     margin: 20px 40px;
   }
+
   .deployment-item {
     align-items: center;
     width: 100% !important;
   }
+
   .deployment-description {
     text-align: center;
   }
 }
+
 @media screen and (max-width: 850px) {
   .deployment-section {
     padding: 20px 10px;
     margin: 20px 20px;
   }
+
   .deployment-title {
     font-size: 20px;
     margin-bottom: 15px;
   }
 }
+
 /* End section deployment */
 .requsetDemo-section {
   padding: 30px 20px;
   margin: 20px 0;
 }
+
 .requsetDemo-item {
   display: flex;
   justify-content: center;
@@ -657,13 +671,16 @@ section {
   text-align: center;
   padding: 20px 0;
 }
+
 .requsetDemo-item .requsetDemo-title {
   padding: 10px 0;
   /* color: royalblue; */
 }
+
 .requsetDemo-item .requsetDemo-description {
   padding: 10px 0;
 }
+
 /* .requsetDemo-item .btn-request {
   background-color: royalblue;
   color: #fff;
@@ -750,6 +767,7 @@ section {
   bottom: 45px;
   z-index: 99;
 }
+
 /* Page request demo */
 .demo-section {
   padding: 60px 20px;
@@ -777,15 +795,18 @@ section {
   border-radius: 8px 8px 0 0;
   margin: 15px 0;
 }
+
 .details-header h4 {
   font-size: 18px;
 }
+
 .details-header p {
   border: 1px solid #eee;
   background-color: #ececec;
   border-radius: 2px;
   color: #79788c;
 }
+
 .calendar-header span {
   font-size: 22px;
   font-weight: 600;
@@ -818,9 +839,11 @@ section {
   margin: 5px 0;
   font-size: 14px;
 }
+
 .time-slots h5 {
   font-size: 18px;
 }
+
 .time-options {
   display: flex;
   flex-direction: column;
@@ -837,21 +860,25 @@ section {
 .create-meeting-link:hover {
   text-decoration: underline;
 }
+
 @media (max-width: 850px) {
   .demo-section {
     padding: 30px 15px;
     margin-top: 70px;
     margin-bottom: 30px;
   }
+
   .demo-section .container {
     width: 100%;
   }
 }
+
 @media (max-width: 450px) {
   .time-slots {
     padding: 0 10px;
   }
 }
+
 :root {
   --dark-body: #4d4c5a;
   --dark-main: #141529;
@@ -1123,12 +1150,12 @@ section {
   opacity: 0.8;
 }
 
-.month-list > div {
+.month-list>div {
   display: grid;
   place-items: center;
 }
 
-.month-list > div > div {
+.month-list>div>div {
   width: 100%;
   padding: 5px 20px;
   border-radius: 10px;
@@ -1137,7 +1164,7 @@ section {
   color: var(--color-txt);
 }
 
-.month-list > div > div:hover {
+.month-list>div>div:hover {
   background-color: var(--color-hover);
 }
 
@@ -1146,6 +1173,7 @@ section {
     transform: translateY(100%);
     opacity: 0;
   }
+
   100% {
     transform: translateY(0);
     opacity: 1;
