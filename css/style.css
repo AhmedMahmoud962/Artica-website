@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
 }
 
 /*  start header section */
@@ -17,9 +18,12 @@ header {
   align-items: center;
   padding: 15px 200px;
   transition: 0.5s ease;
-  margin: 10px 0;
+  /* margin: 10px 0; */
 }
-
+.header {
+  background-color: #111;
+  padding: 10px 200px;
+}
 header .brand {
   color: #fff;
   font-size: 30px;
@@ -157,7 +161,7 @@ section {
 
 @media (max-width: 1024px) {
   header {
-    padding: 12px 20px;
+    padding: 10px 20px;
   }
 
   section {
@@ -738,10 +742,18 @@ section {
 
 /* End section footer */
 
+/* icon Back to top */
+.back-to-top {
+  position: fixed;
+  display: none;
+  right: 30px;
+  bottom: 45px;
+  z-index: 99;
+}
 /* Page request demo */
 .demo-section {
   padding: 60px 20px;
-  margin-top: 30px;
+  margin-top: 70px;
   margin-bottom: 50px;
 }
 
@@ -828,7 +840,7 @@ section {
 @media (max-width: 850px) {
   .demo-section {
     padding: 30px 15px;
-    margin-top: 20px;
+    margin-top: 70px;
     margin-bottom: 30px;
   }
   .demo-section .container {
@@ -927,7 +939,7 @@ section {
 }
 
 .calendar-days div {
-  width: 50px;
+  width: auto;
   height: 40px;
   display: flex;
   align-items: center;
