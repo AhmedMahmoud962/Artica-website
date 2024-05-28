@@ -162,7 +162,9 @@ section {
 }
 
 @media (max-width: 1024px) {
-  header {
+
+  header,
+  .header {
     padding: 10px 20px;
   }
 
@@ -632,7 +634,7 @@ section {
 
 @media screen and (max-width: 850px) {
   .deployment-section {
-    padding: 40px 20px;
+    padding: 60px 20px;
     margin: 20px 40px;
   }
 
@@ -648,7 +650,7 @@ section {
 
 @media screen and (max-width: 850px) {
   .deployment-section {
-    padding: 20px 10px;
+    padding: 50px 10px;
     margin: 20px 20px;
   }
 
