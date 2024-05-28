@@ -597,13 +597,16 @@ section {
 
 /* End section deployment */
 .deployment {
-  background-color: #f2f2f2;
+  /* background-color: #f2f2f2; */
   border-radius: 15px;
 }
 
 .deployment-section {
-  padding: 60px 20px;
+  padding: 60px 40px;
   margin: 20px 100px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
 }
 
 .deployment-item {
@@ -650,8 +653,8 @@ section {
 
 @media screen and (max-width: 850px) {
   .deployment-section {
-    padding: 50px 10px;
-    margin: 20px 20px;
+    padding: 50px 20px;
+    margin: 20px 10px;
   }
 
   .deployment-title {
