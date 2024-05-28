@@ -596,6 +596,7 @@ section {
 /* End section deployment */
 .deployment {
   background-color: #f2f2f2;
+  border-radius: 15px;
 }
 
 .deployment-section {
