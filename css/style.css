@@ -575,6 +575,14 @@ section {
 
 /* Responsive styles */
 @media (max-width: 768px) {
+  .integration {
+    min-height: 85vh;
+  }
+
+  .integration-section {
+    padding: 30px 15px;
+  }
+
   .integration-content h2 {
     font-size: 35px;
   }
