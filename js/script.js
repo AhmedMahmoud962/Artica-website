@@ -149,10 +149,12 @@ dark_mode_toggle.onclick = () => {
   document.querySelector("body").classList.toggle("light");
   document.querySelector("body").classList.toggle("dark");
 };
+
+
 // Back to top
 // Back to top button
 $(window).scroll(function () {
-  if ($(this).scrollTop() > 300) {
+  if ($(this).scrollTop() > 900) {
     $(".back-to-top").fadeIn("slow");
   } else {
     $(".back-to-top").fadeOut("slow");
