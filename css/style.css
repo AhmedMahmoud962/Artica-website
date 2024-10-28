@@ -26,6 +26,23 @@
   --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
+/* scroll */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--bg-second);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--bg-second);
+}
+
 /*  start header section */
 header {
   z-index: 999;
@@ -1027,9 +1044,11 @@ section {
 .back-to-top {
   position: fixed;
   display: none;
-  right: 30px;
+  right: 15px;
   bottom: 45px;
   z-index: 99;
+  background-color: var(--bg-btn) !important;
+  color: var(--color-text) !important;
 }
 
 /* Page request demo */
@@ -1343,9 +1362,7 @@ section {
   cursor: pointer;
 }
 
-.year-change:hover {
-  background-color: var(--color-hover);
-}
+
 
 .calendar-footer {
   padding: 10px;
