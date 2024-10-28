@@ -610,7 +610,7 @@ section {
 
 .section-services {
   color: var(--text-dark);
-  padding: 50px 0;
+  padding: 70px 0;
 }
 
 .section-services .header-section {
@@ -820,34 +820,51 @@ section {
 }
 
 /* End section deployment */
+/* start requsetDemo */
 .requsetDemo-section {
-  padding: 30px 20px;
-  margin: 20px 0;
-}
-
-.requsetDemo-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  padding: 50px 15px;
   text-align: center;
-  padding: 20px 0;
 }
 
-.requsetDemo-item .requsetDemo-title {
-  padding: 10px 0;
-  /* color: royalblue; */
+/* Title Styling */
+.requsetDemo-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--bg-second);
+  margin-bottom: 20px;
 }
 
-.requsetDemo-item .requsetDemo-description {
-  padding: 10px 0;
+.requsetDemo-description {
+  font-size: 1rem;
+  color: var(--bg-second);
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  line-height: 1.6;
+}
+
+/* Service Button Styling */
+.service-button {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  background-color: var(--services-border);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Wobble Animation on Hover */
+.service-button:hover {
+  /* transform: scale(1.05); */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .effect-card {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 0;
 }
 
 .service-button {
@@ -899,6 +916,37 @@ section {
   }
 }
 
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .requsetDemo-title {
+    font-size: 1.8rem;
+  }
+
+  .requsetDemo-description {
+    font-size: 0.9rem;
+    padding: 0 15px;
+  }
+
+  .service-button {
+    font-size: 1rem;
+    padding: 10px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .requsetDemo-title {
+    font-size: 1.5rem;
+  }
+
+  .requsetDemo-description {
+    font-size: 0.85rem;
+  }
+
+  .service-button {
+    font-size: 0.9rem;
+    padding: 8px 20px;
+  }
+}
 
 /* start section footer */
 /* footer */
