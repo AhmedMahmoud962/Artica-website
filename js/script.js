@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", checkScreenSize);
 });
 
+
+
 // Request demo section
 let calendar = document.querySelector(".calendar");
 

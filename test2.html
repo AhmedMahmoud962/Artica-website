@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Artica Website</title>
+  <!-- fav icon -->
+  <link rel="icon" type="image/x-icon" href="img/logo.jpg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+  <style>
+    :root {
+      --first-color: #2e2e41;
+      --second-color: #5b85ff;
+      --third-color: #434354;
+      --text-color: #fff;
+
+      --box-shadow: 0 5px 25px rgba(2, 2, 2, 0.1);
+      --text-shadow: 0 5px 25px rgba(2, 2, 2, 0.1);
+    }
+
+    .main-container {
+      margin: 0 auto;
+      padding: 20px;
+      max-width: 1200px;
+    }
+
+    /* ===== Tab navigation content ===== */
+    .tab-nav-bar {
+      margin: 20px 0;
+    }
+
+    .tab-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .tab-menu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      background-color: var(--third-color);
+      padding: 10px;
+      border-radius: 50px;
+      box-shadow: var(--box-shadow);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .tab-menu::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .tab-menu::-webkit-scrollbar-thumb {
+      background-color: var(--second-color);
+      border-radius: 10px;
+    }
+
+    .tab-btn {
+      color: var(--text-color);
+      padding: 10px 20px;
+      margin: 0 5px;
+      border-radius: 20px;
+      cursor: pointer;
+      white-space: nowrap;
+      text-align: center;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .tab-btn.active,
+    .tab-btn:hover {
+      background-color: var(--second-color);
+      color: var(--text-color);
+    }
+
+    .left-btn,
+    .right-btn {
+      font-size: 1.5rem;
+      color: var(--second-color);
+      cursor: pointer;
+    }
+
+    /* ===== Tab content ===== */
+    .tab-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .tab {
+      display: none;
+    }
+
+    .tab.active {
+      display: block;
+    }
+
+    .left-column,
+    .right-column {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .img-card img {
+      width: 100%;
+      height: 300px;
+      border-radius: 10px;
+      box-shadow: var(--box-shadow);
+      object-fit: cover;
+    }
+
+    .info {
+      padding: 10px;
+    }
+
+    .city {
+      font-size: 2rem;
+      color: var(--first-color);
+      margin-bottom: 10px;
+    }
+
+    .description p {
+      line-height: 1.6;
+      color: var(--first-color);
+    }
+
+    .country {
+      font-size: 1.5rem;
+      color: var(--second-color);
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    /* ===== Responsive design ===== */
+    @media (max-width: 768px) {
+      .tab-navigation {
+        flex-direction: column;
+      }
+
+      .tab-menu {
+        width: 100%;
+      }
+
+      .tab-btn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+      }
+
+      .row {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .city {
+        font-size: 1.5rem;
+      }
+
+      .description p {
+        font-size: 0.9rem;
+      }
+
+      .tab-btn {
+        padding: 5px 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- start header section  -->
+  <header>
+    <a class="brand" href="index.html">Artica</a>
+    <div class="menu-btn"></div>
+    <div class="navigation">
+      <div class="navigation-items">
+        <a href="index.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Explor</a>
+        <a href="#">Gallery</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </header>
+  <!-- end header section  -->
+
+  <!-- start home section  -->
+  <section class="home">
+    <video class="video-silde" src="img/background.mp4" autoplay muted loop>
+
+    </video>
+    <div class="content">
+      <h1>Welcome to <br> <span>Artica</span></h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eum quasi provident. Incidunt quaerat, reiciendis
+        ipsam nam nihil animi sit cupiditate voluptas at suscipit error dignissimos. Temporibus fuga nesciunt dolorum!
+      </p>
+      <!-- <a class="btn" href="#">Read More</a> -->
+      <div class="media-icon">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </section>
+  <!-- end home section  -->
+
+  <!-- start Modules section  -->
+  <article class="main-container">
+    <div class="tab-nav-bar">
+      <div class="tab-navigation">
+        <ion-icon class="left-btn d-none" name="chevron-back-outline"></ion-icon>
+        <ion-icon class="right-btn d-none" name="chevron-forward-outline"></ion-icon>
+        <ul class="tab-menu">
+          <li class="tab-btn active">Knowledge Hub</li>
+          <li class="tab-btn">ERB</li>
+          <li class="tab-btn">Customer Service</li>
+          <li class="tab-btn">Module 4</li>
+          <li class="tab-btn">Module 5</li>
+          <li class="tab-btn">Module 6</li>
+          <li class="tab-btn">Module 7</li>
+          <li class="tab-btn">Module 8</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content">
+
+      <div class="tab active">
+        <div class="row">
+          <div class="left-column">
+            <div class="img-card">
+              <img src="img/m1.jpg" alt="">
+            </div>
+          </div>
+          <div class="right-column">
+            <div class="info">
+              <h2 class="city">Knowledge Hub</h2>
+              <div class="description">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde veniam excepturi fugiat natus hic
+                  aspernatur, magnam molestiae! Aut sit enim labore qui, autem quos deleniti eaque eveniet
+                  repellat. Fuga, unde.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  repellat. Fuga, unde.
+                </p>
+              </div>
+              <div class="btn mt-4">
+                <a class="btn btn-primary" href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab">
+        <div class="row">
+          <div class="left-column">
+            <div class="img-card">
+              <img src="img/m2.jpg" alt="">
+            </div>
+          </div>
+          <div class="right-column">
+            <div class="info">
+              <h2 class="city">ERB</h2>
+              <div class="description">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde veniam excepturi fugiat natus hic
+                  aspernatur, magnam molestiae! Aut sit enim labore qui, autem quos deleniti eaque eveniet
+                  repellat. Fuga, unde.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  repellat. Fuga, unde.
+                </p>
+              </div>
+              <div class="btn mt-4">
+                <a class="btn btn-primary" href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab">
+        <div class="row">
+          <div class="left-column">
+            <div class="img-card">
+              <img src="img/m3.jpg" alt="">
+            </div>
+          </div>
+          <div class="right-column">
+            <div class="info">
+              <h2 class="city">Customer Service</h2>
+              <div class="description">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde veniam excepturi fugiat natus hic
+                  aspernatur, magnam molestiae! Aut sit enim labore qui, autem quos deleniti eaque eveniet
+                  repellat. Fuga, unde.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  repellat. Fuga, unde.
+                </p>
+              </div>
+              <div class="btn mt-4">
+                <a class="btn btn-primary" href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab">
+        <div class="row">
+          <div class="left-column">
+            <div class="img-card">
+              <img src="img/m1.jpg" alt="">
+            </div>
+          </div>
+          <div class="right-column">
+            <div class="info">
+              <h2 class="city">Module 4</h2>
+              <div class="description">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde veniam excepturi fugiat natus hic
+                  aspernatur, magnam molestiae! Aut sit enim labore qui, autem quos deleniti eaque eveniet
+                  repellat. Fuga, unde.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  repellat. Fuga, unde.
+                </p>
+              </div>
+              <div class="btn mt-4">
+                <a class="btn btn-primary" href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab">
+        <div class="row">
+          <div class="left-column">
+            <div class="img-card">
+              <img src="img/m2.jpg" alt="">
+            </div>
+          </div>
+          <div class="right-column">
+            <div class="info">
+              <h2 class="city">Module 5</h2>
+              <div class="description">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde veniam excepturi fugiat natus hic
+                  aspernatur, magnam molestiae! Aut sit enim labore qui, autem quos deleniti eaque eveniet
+                  repellat. Fuga, unde.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  repellat. Fuga, unde.
+                </p>
+              </div>
+              <div class="btn mt-4">
+                <a class="btn btn-primary" href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <h3 class="country">Mexico</h3> -->
+      </div>
+
+      <div class="tab">
+        <div class="row">
+          <div class="left-column">
+            <div class="img-card">
+              <img src="img/m3.jpg" alt="">
+            </div>
+          </div>
+          <div class="right-column">
+            <div class="info">
+              <h2 class="city">Module 6</h2>
+              <div class="description">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde veniam excepturi fugiat natus hic
+                  aspernatur, magnam molestiae! Aut sit enim labore qui, autem quos deleniti eaque eveniet
+                  repellat. Fuga, unde.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  repellat. Fuga, unde.
+                </p>
+              </div>
+              <div class="btn mt-4">
+                <a class="btn btn-primary" href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <h3 class="country">Italy</h3> -->
+      </div>
+
+      <div class="tab">
+        <div class="row">
+          <div class="left-column">
+            <div class="img-card">
+              <img src="img/m1.jpg" alt="">
+            </div>
+          </div>
+          <div class="right-column">
+            <div class="info">
+              <h2 class="city">Module 7</h2>
+              <div class="description">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde veniam excepturi fugiat natus hic
+                  aspernatur, magnam molestiae! Aut sit enim labore qui, autem quos deleniti eaque eveniet
+                  repellat. Fuga, unde.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  repellat. Fuga, unde.
+                </p>
+              </div>
+              <div class="btn mt-4">
+                <a class="btn btn-primary" href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <h3 class="country">USA</h3> -->
+      </div>
+
+      <div class="tab">
+        <div class="row">
+          <div class="left-column">
+            <div class="img-card">
+              <img src="img/m2.jpg" alt="">
+            </div>
+          </div>
+          <div class="right-column">
+            <div class="info">
+              <h2 class="city">Module 8</h2>
+              <div class="description">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde veniam excepturi fugiat natus hic
+                  aspernatur, magnam molestiae! Aut sit enim labore qui, autem quos deleniti eaque eveniet
+                  repellat. Fuga, unde.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  repellat. Fuga, unde.
+                </p>
+              </div>
+              <div class="btn mt-4">
+                <a class="btn btn-primary" href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <h3 class="country">Ukrain</h3> -->
+      </div>
+    </div>
+  </article>
+  <!-- end Modules section  -->
+
+  <!-- start About section  -->
+  <section class="about">
+    <div class="header-section">
+      <h2 class="title">About Us</h2>
+    </div>
+    <div class="about-section">
+      <div class="container-about">
+        <div class="content-about">
+          <h2>Complete protection </h2>
+          <p><strong>Each Kaspersky plan</strong> uses cutting-edge AI technology to detect and stop any type of online
+            threat – even ones that haven’t been seen before. So every time you connect to the internet, we:</p>
+          <ul>
+            <li>
+              <i class="fa fa-check"></i>
+              <span><strong>Protect your privacy</strong> by blocking unauthorised attempts to access your webcam or
+                track
+                your activity on websites.</span>
+            </li>
+            <li>
+              <i class="fa fa-check"></i>
+              <span><strong>Secure your payments</strong> in a hacker-proof Protected Browser when you shop or bank
+                online.</span>
+            </li>
+            <li>
+              <i class="fa fa-check"></i>
+              <span><strong>Keep intruders out</strong> of your network and check websites and emails are safe for you
+                to
+                open.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="image-about">
+          <img src="img/about.png" alt="Kaspersky Protection" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end About section  -->
+
+  <!-- start integration section  -->
+  <article class="integration">
+    <section class="integration-section">
+      <div class="integration-content">
+        <h2>We get by with a little help — from <br> <span>our growing list of integrations</span></h2>
+        <p>Assist AI has direct integrations with ITSM, knowledge base, and <br> <span>IDAM apps, helping our team work
+            smarter and faster.</span></p>
+        <div class="wizard-progress">
+          <img id="wizard-image" src="img/wizard.png" alt="wizard" loading="lazy">
+        </div>
+      </div>
+    </section>
+  </article>
+  <!-- end integration section  -->
+
+  <!-- start services section  -->
+  <section class="section-services">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-md-10 col-lg-8">
+          <div class="header-section">
+            <h2 class="title">Our Services</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Single Service -->
+        <div class="col-md-6 col-lg-4">
+          <div class="single-service">
+            <div class="content">
+              <span class="icon">
+                <i class="fab fa-battle-net"></i>
+              </span>
+              <h3 class="title">Information Technology</h3>
+              <p class="description">Unburden your IT support team and adapt to the changing employee expectations by
+                delivering support that is
+                instant, reliable, and contextual.</p>
+            </div>
+            <span class="circle-before"></span>
+          </div>
+        </div>
+        <!-- / End Single Service -->
+        <!-- Single Service -->
+        <div class="col-md-6 col-lg-4">
+          <div class="single-service">
+            <div class="content">
+              <span class="icon">
+                <i class="fab fa-asymmetrik"></i>
+              </span>
+              <h3 class="title">Human Resource </h3>
+              <p class="description">Get more done with less busy work. Let Assist AI focus on instantly resolving yet
+                another repetitive request
+                while you focus on what really matters.</p>
+            </div>
+            <span class="circle-before"></span>
+          </div>
+        </div>
+        <!-- / End Single Service -->
+        <!-- Single Service -->
+        <div class="col-md-6 col-lg-4">
+          <div class="single-service">
+            <div class="content">
+              <span class="icon">
+                <i class="fa-solid fa-chart-simple"></i>
+              </span>
+              <h3 class="title">Marketing </h3>
+              <p class="description">MBoost your marketing efficiency by automating repetitive tasks and focusing on
+                strategy and creativity.</p>
+            </div>
+            <span class="circle-before"></span>
+          </div>
+        </div>
+        <!-- / End Single Service -->
+        <!-- Single Service -->
+        <div class="col-md-6 col-lg-4">
+          <div class="single-service">
+            <div class="content">
+              <span class="icon">
+                <i class="fab fa-500px"></i>
+              </span>
+              <h3 class="title">Sales </h3>
+              <p class="description">Enhance your sales processes with automation and focus on closing deals and
+                building relationships.</p>
+            </div>
+            <span class="circle-before"></span>
+          </div>
+        </div>
+        <!-- / End Single Service -->
+        <!-- Single Service -->
+        <div class="col-md-6 col-lg-4">
+          <div class="single-service">
+            <div class="content">
+              <span class="icon">
+                <i class="fa-solid fa-headset"></i>
+              </span>
+              <h3 class="title">Customer Support</h3>
+              <p class="description">Provide exceptional customer support by automating responses and managing queries
+                effectively.</p>
+            </div>
+            <span class="circle-before"></span>
+          </div>
+        </div>
+        <!-- / End Single Service -->
+        <!-- Single Service -->
+        <div class="col-md-6 col-lg-4">
+          <div class="single-service">
+            <div class="content">
+              <span class="icon">
+                <i class="fas fa-laptop-code"></i>
+              </span>
+              <h3 class="title">Sales</h3>
+              <p class="description">Enhance your sales processes with automation and focus on closing deals and
+                building relationships.</p>
+            </div>
+            <span class="circle-before"></span>
+          </div>
+        </div>
+        <!-- / End Single Service -->
+      </div>
+    </div>
+  </section>
+  <!-- / END SECTION SERVICES -->
+
+  <!-- Start deployment section -->
+  <article class="deployment">
+    <section class="deployment-section">
+      <div class="header-section">
+        <h2 class="title">Flexible Deployment</h2>
+      </div>
+      <div class="row justify-content-start">
+        <div class="col-md-6 col-sm-6 deployment-item">
+          <img src="img/deployment2.png" alt="On-premise" loading="lazy" />
+          <h3 class="deployment-title">On-premise</h3>
+          <p class="deployment-description">If you require more control over your data, tighter security, or flexible
+            integration with your backend systems, we got you covered.</p>
+        </div>
+        <div class="col-md-6 col-sm-6 deployment-item">
+          <img src="img/deployment1.png" alt="Hybrid and Private Cloud Hosting" loading="lazy" />
+          <h3 class="deployment-title">Hybrid and Private Cloud Hosting</h3>
+          <p class="deployment-description">WideBot offers deployment on a private cloud model and a hybrid hosting
+            model too. So you get the best of both worlds!</p>
+        </div>
+      </div>
+    </section>
+  </article>
+  <!-- End deployment section -->
+
+
+  <!-- start requset-demo section  -->
+  <section class="requsetDemo-section">
+    <!-- <h2 style="font-weight: 500;" class="text-center mb-3">Flexible Deployment</h2> -->
+    <div class="row justify-content-start">
+      <div class="col-md-12 col-sm-6 requsetDemo-item ">
+        <div class="header-section">
+          <h2 class="title">Let’s Start Our Collaboration Now</h2>
+        </div>
+        <p class="requsetDemo-description">Contact us today for more information and inquiries about WideBot’s
+          intelligent solutions for business growth and development.
+        </p>
+        <div class="effect-card">
+          <a href="request_demo.html" class="service-button wobble">Request Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end requset-demo section  -->
+
+  <!-- start footer section  -->
+  <div class="footer">
+    <div class="top">
+      <div>
+        <h1>Artica</h1>
+        <p>Choose your favourita plan.</p>
+      </div>
+      <div>
+        <a href="#" target="blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="#" target="blank">
+          <i class="fa-brands fa-square-github"></i>
+        </a>
+        <a href="#" target="blank">
+          <i class="fa-brands fa-square-whatsapp"></i>
+        </a>
+        <a href="#" target="blank">
+          <i class="fa-brands fa-square-facebook"></i>
+        </a>
+      </div>
+    </div>
+    <div class="bottom">
+      <div>
+        <h4>Project</h4>
+        <a href="#">Changelog</a>
+        <a href="#">Status</a>
+        <a href="#">License</a>
+        <a href="#">All Versions</a>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <a href="#" target="blank">
+          Github
+        </a>
+        <a href="#" target="blank">
+          Issues
+        </a>
+        <a href="#" target="blank">
+          Projects
+        </a>
+        <a href="#" target="blank">
+          Linked In
+        </a>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <a href="#">Support</a>
+        <a href="#">Troubleshooting</a>
+        <a href="#">Contact Us</a>
+        <a href="#">All Versions</a>
+      </div>
+      <div>
+        <h4>Others</h4>
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">License</a>
+      </div>
+    </div>
+  </div>
+  <!-- end footer section  -->
+
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-lg-square back-to-top"><i class="fa-solid fa-arrow-up"></i></a>
+
+  <script src="js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    const btnLeft = document.querySelector('.left-btn');
+    const btnRight = document.querySelector('.right-btn');
+    const tabMenu = document.querySelector('.tab-menu');
+
+    const iconVisibility = () => {
+      let scrollLeftValue = Math.ceil(tabMenu.scrollLeft);
+      console.log('1.', scrollLeftValue);
+
+      let scrollableWidth = tabMenu.scrollWidth - tabMenu.clientWidth;
+      console.log('2.', scrollableWidth);
+
+      btnLeft.style.display = scrollLeftValue > 0 ? 'block' : 'none';
+      btnRight.style.display = scrollableWidth > scrollLeftValue ? 'block' : 'none';
+    };
+
+    btnRight.addEventListener('click', () => {
+      tabMenu.scrollLeft += 150;
+      //iconVisibility();
+      setTimeout(() => iconVisibility(), 50);
+    });
+    btnLeft.addEventListener('click', () => {
+      tabMenu.scrollLeft -= 150;
+      //iconVisibility();
+      setTimeout(() => iconVisibility(), 50);
+    });
+
+    window.onload = function () {
+      btnRight.style.display =
+        tabMenu.scrollWidth > tabMenu.clientWidth
+          || tabMenu.scrollWidth >= window.innerWidth
+          ? 'block' : 'none';
+      btnLeft.style.display = tabMenu.scrollWidth >= window.innerWidth ? '' : 'none';
+    };
+
+    window.onresize = function () {
+      btnRight.style.display =
+        tabMenu.scrollWidth > tabMenu.clientWidth
+          || tabMenu.scrollWidth >= window.innerWidth
+          ? 'block' : 'none';
+      btnLeft.style.display = tabMenu.scrollWidth >= window.innerWidth ? '' : 'none';
+
+      let scrollLeftValue = Math.round(tabMenu.scrollLeft);
+      btnLeft.style.display = scrollLeftValue > 0 ? 'block' : 'none';
+    };
+
+
+
+
+    // Javascript to make the tab navigation draggable
+    let activeDrag = false;
+
+    tabMenu.addEventListener('mousemove', (drag) => {
+      if (!activeDrag) return;
+      tabMenu.scrollLeft -= drag.movementX;
+      iconVisibility();
+
+      tabMenu.classList.add('dragging');
+    });
+
+    document.addEventListener('mouseup', () => {
+      activeDrag = false;
+
+      tabMenu.classList.remove('dragging');
+    });
+
+    tabMenu.addEventListener('mousedown', () => {
+      activeDrag = true;
+    });
+
+
+
+    // Javascript to view tab contents on click tab buttons
+    const tabs = document.querySelectorAll('.tab');
+    const tabBtns = document.querySelectorAll('.tab-btn');
+
+    const tab_Nav = function (tabBtnClick) {
+      tabBtns.forEach((tabBtn) => {
+        tabBtn.classList.remove('active');
+      });
+
+      tabs.forEach((tab) => {
+        tab.classList.remove('active');
+      });
+
+      tabBtns[tabBtnClick].classList.add('active');
+      tabs[tabBtnClick].classList.add('active');
+    };
+
+    tabBtns.forEach((tabBtn, i) => {
+      tabBtn.addEventListener('click', () => {
+        tab_Nav(i);
+      });
+    });
+  </script>
+</body>
+
+</html>
