@@ -117,6 +117,7 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       position: relative;
       overflow: visible;
+      margin: 10px 0;
     }
 
     .module-content {
@@ -144,7 +145,6 @@
       overflow: visible;
     }
 
-
     /* Icon Styling */
     .module-icon {
       width: 80px;
@@ -154,7 +154,6 @@
 
     .btn-primary {
       margin-top: 10px;
-      background-color: #5b4ded;
       border: none;
       color: #ffffff;
       border-radius: 20px;
@@ -162,13 +161,30 @@
       font-size: 14px;
       width: 120px;
       display: none;
-      transition: transform 0.4s ease-in-out;
+      transition: transform 0.4s ease-in-out, background-color 0.4s ease-in-out;
+      border: none !important;
     }
 
     .module-card:hover .btn-primary {
-      transition: transform 0.4s ease-in-out;
       display: block;
     }
+
+    .module-erp:hover .btn-primary {
+      background-color: #4e69e2;
+    }
+
+    .module-retail:hover .btn-primary {
+      background-color: #a64be5;
+    }
+
+    .module-hospitality:hover .btn-primary {
+      background-color: #39c5ed;
+    }
+
+    .module-school:hover .btn-primary {
+      background-color: #f76659;
+    }
+
 
     /* Color Styles */
     .module-erp {
@@ -176,9 +192,19 @@
       color: #4e69e2;
     }
 
+    .module-erp:hover {
+      background-color: #4e69e21d;
+      transition: all 0.4s ease-in-out;
+    }
+
     .module-retail {
       border-color: #a64be5;
       color: #a64be5;
+    }
+
+    .module-retail:hover {
+      background-color: #a54be51c;
+      transition: all 0.4s ease-in-out;
     }
 
     .module-hospitality {
@@ -186,9 +212,19 @@
       color: #39c5ed;
     }
 
+    .module-hospitality:hover {
+      background-color: #39c6ed1f;
+      transition: all 0.4s ease-in-out;
+    }
+
     .module-school {
       border-color: #f76659;
       color: #f76659;
+    }
+
+    .module-school:hover {
+      background-color: #f7665912;
+      transition: all 0.4s ease-in-out;
     }
 
     /* Responsive Design */
@@ -244,11 +280,43 @@
   <!-- end home section  -->
 
   <!-- modules -->
-  <article class="py-5">
+  <article class="pt-5">
     <div class="header-section">
       <h2 class="title">Modules</h2>
     </div>
     <div class="module-container">
+      <div class="module-card module-erp">
+        <div class="module-content">
+          <img src="img/module1.png" alt="ERP Icon" class="module-icon">
+          <h3>ERP</h3>
+          <p>Accelerate your organization’s growth with an agile, scalable, and...</p>
+          <a href="#" class="btn btn-primary">More info</a>
+        </div>
+      </div>
+      <div class="module-card module-retail">
+        <div class="module-content">
+          <img src="img/module2.png" alt="ERP Icon" class="module-icon">
+          <h3>Retail Management</h3>
+          <p>True Omnichannel, All-in-One Retail Management Solution</p>
+          <a href="#" class="btn btn-primary">More info</a>
+        </div>
+      </div>
+      <div class="module-card module-hospitality">
+        <div class="module-content">
+          <img src="img/module1.png" alt="ERP Icon" class="module-icon">
+          <h3>Hospitality Management</h3>
+          <p>Next-Gen Property Management Software</p>
+          <a href="#" class="btn btn-primary">More info</a>
+        </div>
+      </div>
+      <div class="module-card module-school">
+        <div class="module-content">
+          <img src="img/module3.png" alt="ERP Icon" class="module-icon">
+          <h3>School Management</h3>
+          <p>Ace pedagogical management with Priority SMIS</p>
+          <a href="#" class="btn btn-primary">More info</a>
+        </div>
+      </div>
       <div class="module-card module-erp">
         <div class="module-content">
           <img src="img/module1.png" alt="ERP Icon" class="module-icon">
