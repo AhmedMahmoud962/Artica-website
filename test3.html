@@ -15,17 +15,20 @@
   <!-- swiper -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <style>
-    /* Card container styles */
+    /* .container {
+      width: 70%;
+      margin: 0 auto;
+    }
+
     .card {
       position: relative;
-      /* border: 2px solid #5b4ded; */
       border-radius: 15px;
       transition: all 0.4s ease-in-out;
       background-color: #f8faff;
-      padding: 20px;
+      padding: 5px;
       overflow: visible;
       text-align: center;
-      height: 250px;
+      height: 240px;
       box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
       z-index: 0 !important;
     }
@@ -35,16 +38,19 @@
       position: relative;
       z-index: 99 !important;
       text-align: left !important;
+      overflow: hidden;
     }
 
     .card:hover .card-body {
       transform: translateY(-70px);
       z-index: 100 !important;
+      overflow: visible;
     }
 
     .card .icon img {
       max-width: 80px;
       transition: transform 0.4s ease-in-out;
+      object-fit: cover;
     }
 
     .card:hover .icon img {
@@ -54,7 +60,7 @@
     .card-title {
       color: #5b4ded;
       font-weight: bold;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       margin-bottom: 15px;
       transition: color 0.3s ease-in-out;
     }
@@ -87,9 +93,115 @@
     }
 
     .card:hover .btn-primary {
-      /* transform: translateY(-5px); */
       transition: transform 0.4s ease-in-out;
       display: block;
+    } */
+
+    .module-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      width: 75%;
+      margin: 40px auto;
+    }
+
+    .module-card {
+      border: 1px solid;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: left;
+      width: calc(25% - 60px);
+      min-width: 250px;
+      height: 250px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: visible;
+    }
+
+    .module-content {
+      transition: transform 0.4s ease-in-out;
+      position: relative;
+      z-index: 99 !important;
+      text-align: left !important;
+      overflow: hidden;
+    }
+
+    .module-content h3 {
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .module-content p {
+      font-size: 12px;
+      color: #444;
+    }
+
+    .module-card:hover .module-content {
+      transform: translateY(-70px);
+      overflow: visible;
+    }
+
+
+    /* Icon Styling */
+    .module-icon {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 15px;
+    }
+
+    .btn-primary {
+      margin-top: 10px;
+      background-color: #5b4ded;
+      border: none;
+      color: #ffffff;
+      border-radius: 20px;
+      padding: 7px 12px;
+      font-size: 14px;
+      width: 120px;
+      display: none;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .module-card:hover .btn-primary {
+      transition: transform 0.4s ease-in-out;
+      display: block;
+    }
+
+    /* Color Styles */
+    .module-erp {
+      border-color: #4e69e2;
+      color: #4e69e2;
+    }
+
+    .module-retail {
+      border-color: #a64be5;
+      color: #a64be5;
+    }
+
+    .module-hospitality {
+      border-color: #39c5ed;
+      color: #39c5ed;
+    }
+
+    .module-school {
+      border-color: #f76659;
+      color: #f76659;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .module-card {
+        width: calc(50% - 20px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .module-card {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -132,62 +244,41 @@
   <!-- end home section  -->
 
   <!-- modules -->
-  <article class="container py-5">
+  <article class="py-5">
     <div class="header-section">
       <h2 class="title">Modules</h2>
     </div>
-    <div class="row mt-5">
-      <!-- Card 1 -->
-      <div class="col-md-6 col-lg-3 mb-4">
-        <div class="card text-center shadow-sm">
-          <div class="card-body">
-            <div class="icon mb-3">
-              <img src="img/module1.png" alt="Icon" class="img-fluid">
-            </div>
-            <h5 class="card-title">ERP</h5>
-            <p class="card-text">Accelerate your organization's growth with an agile, scalable .</p>
-            <a href="#" class="btn btn-primary">Read More</a>
-          </div>
+    <div class="module-container">
+      <div class="module-card module-erp">
+        <div class="module-content">
+          <img src="img/module1.png" alt="ERP Icon" class="module-icon">
+          <h3>ERP</h3>
+          <p>Accelerate your organization’s growth with an agile, scalable, and...</p>
+          <a href="#" class="btn btn-primary">More info</a>
         </div>
       </div>
-      <!-- Card 2 -->
-      <div class="col-md-6 col-lg-3 mb-4">
-        <div class="card text-center shadow-sm">
-          <div class="card-body">
-            <div class="icon mb-3">
-              <img src="img/module2.png" alt="Icon" class="img-fluid">
-            </div>
-            <h5 class="card-title">Retail Management
-            </h5>
-            <p class="card-text">True Omnichannel, All-in-One Retail Management Solution   </p>
-            <a href="#" class="btn btn-primary">Read More</a>
-          </div>
+      <div class="module-card module-retail">
+        <div class="module-content">
+          <img src="img/module2.png" alt="ERP Icon" class="module-icon">
+          <h3>Retail Management</h3>
+          <p>True Omnichannel, All-in-One Retail Management Solution</p>
+          <a href="#" class="btn btn-primary">More info</a>
         </div>
       </div>
-      <!-- Card 3 -->
-      <div class="col-md-6 col-lg-3 mb-4">
-        <div class="card text-center shadow-sm">
-          <div class="card-body">
-            <div class="icon mb-3">
-              <img src="img/module3.png" alt="Icon" class="img-fluid">
-            </div>
-            <h5 class="card-title">Knowledge Hub</h5>
-            <p class="card-text">Streamline HR processes with robust and scalable .</p>
-            <a href="#" class="btn btn-primary">Read More</a>
-          </div>
+      <div class="module-card module-hospitality">
+        <div class="module-content">
+          <img src="img/module1.png" alt="ERP Icon" class="module-icon">
+          <h3>Hospitality Management</h3>
+          <p>Next-Gen Property Management Software</p>
+          <a href="#" class="btn btn-primary">More info</a>
         </div>
       </div>
-      <!-- Card 4 -->
-      <div class="col-md-6 col-lg-3 mb-4">
-        <div class="card text-center shadow-sm">
-          <div class="card-body">
-            <div class="icon mb-3">
-              <img src="img/module1.png" alt="Icon" class="img-fluid">
-            </div>
-            <h5 class="card-title">Modul 4</h5>
-            <p class="card-text">Optimize financial management with cutting-edge tools and .</p>
-            <a href="#" class="btn btn-primary">Read More</a>
-          </div>
+      <div class="module-card module-school">
+        <div class="module-content">
+          <img src="img/module3.png" alt="ERP Icon" class="module-icon">
+          <h3>School Management</h3>
+          <p>Ace pedagogical management with Priority SMIS</p>
+          <a href="#" class="btn btn-primary">More info</a>
         </div>
       </div>
     </div>
