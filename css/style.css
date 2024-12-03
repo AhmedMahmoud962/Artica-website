@@ -550,9 +550,14 @@ section {
 .skills {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   font-weight: 700;
   font-size: 13px;
   margin-bottom: 40px;
+}
+
+.skills span {
+  padding: 7px 0;
 }
 
 .btn-read {
@@ -571,7 +576,7 @@ section {
 
 @media screen and (max-width:1200px) {
   .inner-container {
-    padding: 30px 20px;
+    padding: 40px 20px;
   }
 }
 
@@ -592,9 +597,13 @@ section {
     margin: 0;
   }
 
-  .inner-container {
-    padding: 30px 20px;
+  .modules {
+    margin: 35px 0;
   }
+
+  /* .inner-container {
+    padding: 30px 20px;
+  } */
 }
 
 /* .about {
