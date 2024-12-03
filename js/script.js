@@ -1,3 +1,16 @@
+// Get the header element
+const header = document.querySelector("header");
+
+// Add an event listener to detect scroll
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    // Adjust scrollY value as needed
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+
 // header menu
 const menuBtn = document.querySelector(".menu-btn");
 const navigation = document.querySelector(".navigation");
@@ -23,8 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Add an event listener to check the screen size on resize
   window.addEventListener("resize", checkScreenSize);
 });
-
-
 
 // Request demo section
 let calendar = document.querySelector(".calendar");
@@ -151,7 +162,6 @@ dark_mode_toggle.onclick = () => {
   document.querySelector("body").classList.toggle("light");
   document.querySelector("body").classList.toggle("dark");
 };
-
 
 // Back to top
 // Back to top button

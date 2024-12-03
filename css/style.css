@@ -9,7 +9,7 @@
 :root {
   --bg-body: #fff;
   --bg-dark: #000;
-  --bg-header: #141529;
+  --bg-header: #000;
   --bg-second: #79788c;
   --bg-hover: rgba(1, 1, 1, 0.3);
   --color-hover: #323048;
@@ -46,16 +46,21 @@
 /*  start header section */
 header {
   z-index: 999;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 200px;
-  transition: 0.5s ease;
-  /* margin: 10px 0; */
+  padding: 10px 200px;
+  background-color: transparent;
+  transition: background-color 0.5s ease, padding 0.3s ease;
+}
+
+header.scrolled {
+  background-color: var(--bg-header);
+  /* Change to your desired dark color */
 }
 
 .header {
@@ -343,83 +348,157 @@ section {
 }
 
 /*  end home section */
-/*  end Module section */
+/*  start Module section */
 .modules {
-  max-width: 1200px;
-  margin: 30px auto;
-  padding: 20px 10px;
-  text-align: center;
+  margin: 70px 0;
 }
 
-/* Modules Section */
-.modules-section {
+.module-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 20px;
   justify-content: center;
-  margin: 30px 0;
+  width: 75%;
+  margin: 40px auto;
 }
 
-/* Module Item with specific backgrounds */
-.modules-item {
+.module-card {
+  border: 1px solid;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  width: calc(33.333% - 20px);
+  padding: 15px;
+  text-align: left;
+  width: calc(25% - 60px);
+  min-width: 250px;
+  height: 250px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  color: var(--text-dark);
+  position: relative;
+  overflow: visible;
+  margin: 10px 0;
 }
 
-
-.modules-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.module-content {
+  transition: transform 0.4s ease-in-out;
+  position: relative;
+  z-index: 99 !important;
+  text-align: left !important;
+  overflow: hidden;
 }
 
-.modules-image {
-  width: 200px;
-  height: auto;
-  margin-bottom: 15px;
-  transition: transform 0.3s ease;
-}
-
-.modules-item:hover .modules-image {
-  transform: scale(1.1);
-}
-
-/* Text Styles */
-.modules-item h3 {
-  font-size: 1.3rem;
-  margin: 10px 0 5px;
+.module-content h3 {
   font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  transition: color 0.3s ease-in-out;
 }
 
-.modules-item p {
-  font-size: 1rem;
-  color: var(--bg-second);
+.module-content p {
+  font-size: 12px;
+  color: #444;
 }
 
-/* Responsive Styles */
-@media (max-width: 900px) {
-  .modules-item {
+.module-card:hover .module-content {
+  transform: translateY(-70px);
+  overflow: visible;
+}
+
+/* Icon Styling */
+.module-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+}
+
+.btn-more {
+  margin-top: 10px !important;
+  border: none !important;
+  color: #ffffff !important;
+  border-radius: 20px !important;
+  ;
+  padding: 7px 12px !important;
+  ;
+  font-size: 14px !important;
+  width: 120px !important;
+  display: none !important;
+  transition: transform 0.4s ease-in-out, background-color 0.4s ease-in-out !important;
+  ;
+  border: none !important;
+}
+
+.module-card:hover .btn-more {
+  display: block !important;
+}
+
+.module-erp:hover .btn-more {
+  background-color: #4e69e2;
+}
+
+.module-retail:hover .btn-more {
+  background-color: #a64be5;
+}
+
+.module-hospitality:hover .btn-more {
+  background-color: #39c5ed;
+}
+
+.module-school:hover .btn-more {
+  background-color: #f76659;
+}
+
+
+/* Color Styles */
+.module-erp {
+  border-color: #4e69e2;
+  color: #4e69e2;
+}
+
+.module-erp:hover {
+  background-color: #4e69e21d;
+  transition: all 0.4s ease-in-out;
+}
+
+.module-retail {
+  border-color: #a64be5;
+  color: #a64be5;
+}
+
+.module-retail:hover {
+  background-color: #a54be51c;
+  transition: all 0.4s ease-in-out;
+}
+
+.module-hospitality {
+  border-color: #39c5ed;
+  color: #39c5ed;
+}
+
+.module-hospitality:hover {
+  background-color: #39c6ed1f;
+  transition: all 0.4s ease-in-out;
+}
+
+.module-school {
+  border-color: #f76659;
+  color: #f76659;
+}
+
+.module-school:hover {
+  background-color: #f7665912;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .module-card {
     width: calc(50% - 20px);
   }
 
   .modules {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 10px;
-    text-align: center;
+    margin: 40px 0;
   }
-
 }
 
-@media (max-width: 600px) {
-  .modules-item {
+@media (max-width: 480px) {
+  .module-card {
     width: 100%;
   }
 }
