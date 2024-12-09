@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
@@ -32,62 +33,41 @@
   </header>
   <!-- end header section  -->
   <section class="demo-section">
-    <h4 class="text-center mb-3" style="font-weight: 600;">Request A Demo </h4>
-    <div class="container col-md-6">
+    <h3 class="text-center fw-semibold mb-4 request">Request A Demo</h3>
+    <div class="container">
       <div class="row justify-content-center">
-        <div class="calendar col-md-7">
-          <div class="calendar-header">
-            <span class="month-picker" id="month-picker">February</span>
-            <div class="year-picker d-flex align-items-baseline">
-              <span class="year-change" id="prev-year">
-                <pre><i class="fa-solid fa-chevron-left"></i></pre>
-              </span>
-              <span id="year"></span>
-              <span class="year-change" id="next-year">
-                <pre><i class="fa-solid fa-chevron-right"></i></pre>
-              </span>
-            </div>
+        <div class="col-md-6 col-12">
+          <div class="calendar mx-auto">
+            <div inline-datepicker datepicker-buttons datepicker-autoselect-today class="mx-auto"></div>
           </div>
-          <div class="calendar-body">
-            <div class="calendar-week-day">
-              <div>Sun</div>
-              <div>Mon</div>
-              <div>Tue</div>
-              <div>Wed</div>
-              <div>Thu</div>
-              <div>Fri</div>
-              <div>Sat</div>
-            </div>
-            <div class="calendar-days"></div>
-          </div>
-          <div class="month-list"></div>
         </div>
-        <div class="col-md-5 details-section">
+        <div class="col-md-6 col-12 details-section">
           <div class="details-header">
-            <h4>Meeting duration</h4>
-            <p>45 mins</p>
+            <h4 class="fw-semibold"> 30 Minute Meeting</h4>
+            <div class="text-left">
+              <p> <i class="fa-solid fa-clock pe-2"></i> 30 mins</p>
+              <p> <i class="fa-solid fa-video pe-2"></i> Web conferencing details provided upon confirmation.
+              </p>
+              <h6 class="fw-semibold"> Book Appointment</h6>
+              <p>Book 30-Minute meeting with Artica Team</p>
+            </div>
           </div>
           <div class="time-slots">
-            <h5>What time works best?</h5>
-            <p>Showing times for <strong>May 22, 2024</strong></p>
             <div class="time-options">
-              <button class="btn btn-outline-primary">12:00 pm</button>
-              <button class="btn btn-outline-primary">12:30 pm</button>
-              <button class="btn btn-outline-primary">1:00 pm</button>
-              <button class="btn btn-outline-primary">3:00 pm</button>
+              <button class="btn btn-outline-primary col-md-4 col-4">12:00 pm</button>
+              <button class="btn btn-outline-primary col-md-4 col-4">12:30 pm</button>
+              <button class="btn btn-outline-primary col-md-4 col-4">1:00 pm</button>
+              <button class="btn btn-outline-primary col-md-4 col-4">3:00 pm</button>
+              <button class="btn btn-outline-primary col-md-4 col-4">1:00 pm</button>
+              <button class="btn btn-outline-primary col-md-4 col-4">3:00 pm</button>
+              <button class="btn btn-outline-primary col-md-4 col-4">1:00 pm</button>
+              <button class="btn btn-outline-primary col-md-4 col-4">3:00 pm</button>
             </div>
           </div>
         </div>
       </div>
-      <!-- <div class="text-center mt-1">
-        <a href="#" class="create-meeting-link">Create your free meeting booking page</a>
-      </div> -->
-      <!-- <div class="text-center mt-3">
-        <a href="index.html" class="create-meeting-link">Home Page </a>
-      </div> -->
     </div>
   </section>
-
   <!-- start footer section  -->
   <div class="footer">
     <div class="top">
@@ -149,6 +129,7 @@
     </div>
   </div>
   <!-- end footer section  -->
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 

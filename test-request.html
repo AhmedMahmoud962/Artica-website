@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Request a Demo</title>
+  <!-- fav icon -->
+  <link rel="icon" type="image/x-icon" href="img/logo.jpg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+
+
+  <style>
+    /* Page request demo */
+    .demo-section {
+      padding: 60px 20px;
+      margin-top: 70px;
+      margin-bottom: 50px;
+    }
+
+    .demo-section .container {
+      /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.01); */
+      background-color: var(--bg-body);
+      border: 1px solid #eee;
+      padding: 30px 50px;
+      border-radius: 7px;
+    }
+
+    .details-section {
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .details-header {
+      text-align: center;
+      padding: 20px;
+      color: var(--bg-dark);
+      border-radius: 8px 8px 0 0;
+      margin: 15px 0;
+    }
+
+    .details-header h4 {
+      font-size: 18px;
+    }
+
+    .details-header p {
+      border: 1px solid #eee;
+      background-color: #ececec;
+      border-radius: 2px;
+      color: var(--color-gray);
+    }
+
+    .calendar-header span {
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .calendar-body {
+      padding: 10px;
+    }
+
+    .calendar-week-day {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .calendar-week-day div,
+    .calendar-days div {
+      padding: 10px 0;
+    }
+
+    .calendar-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+    }
+
+    .details-header p,
+    .time-slots p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    .time-slots h5 {
+      font-size: 18px;
+    }
+
+    .time-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 20px 10px;
+    }
+
+    .create-meeting-link {
+      color: #222;
+      text-decoration: none;
+      text-decoration: underline;
+    }
+
+    .create-meeting-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 850px) {
+      .demo-section {
+        padding: 30px 15px;
+        margin-top: 70px;
+        margin-bottom: 30px;
+      }
+
+      .demo-section .container {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .time-slots {
+        padding: 0 10px;
+      }
+    }
+
+
+    /* page request demo  */
+    :root {
+      --dark-body: #4d4c5a;
+      --dark-main: #141529;
+      --dark-second: #79788c;
+      --dark-hover: #323048;
+      --dark-text: #f8fbff;
+
+      --light-body: #f3f8fe;
+      --light-main: #fdfdfd;
+      --light-second: #c3c2c8;
+      --light-hover: #edf0f5;
+      --light-text: #151426;
+
+      --blue: #0000ff;
+      --white: #fff;
+
+      --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+      --font-family: cursive;
+    }
+
+    .dark {
+      --bg-body: var(--dark-body);
+      --bg-main: var(--dark-main);
+      --bg-second: var(--dark-second);
+      --color-hover: var(--dark-hover);
+      --color-txt: var(--dark-text);
+    }
+
+    .light {
+      --bg-body: var(--light-body);
+      --bg-main: var(--light-main);
+      --bg-second: var(--light-second);
+      --color-hover: var(--light-hover);
+      --color-txt: var(--light-text);
+    }
+
+    .calendar {
+      height: max-content;
+      width: max-content;
+      background-color: var(--bg-main);
+      border-radius: 30px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      /* transform: scale(1.25); */
+    }
+
+    .light .calendar {
+      box-shadow: var(--shadow);
+    }
+
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 25px;
+      font-weight: 600;
+      color: var(--color-txt);
+      padding: 10px;
+    }
+
+    .calendar-body {
+      padding: 10px;
+    }
+
+    .calendar-week-day {
+      height: 50px;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      font-weight: 600;
+    }
+
+    .calendar-week-day div {
+      display: grid;
+      place-items: center;
+      color: var(--bg-second);
+    }
+
+    .calendar-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+      color: var(--color-txt);
+    }
+
+    .calendar-days div {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+      position: relative;
+      cursor: pointer;
+      animation: to-top 1s forwards;
+      /* border-radius: 50%; */
+    }
+
+    .calendar-days div span {
+      position: absolute;
+    }
+
+    .calendar-days div:hover span {
+      transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+    }
+
+    .calendar-days div span:nth-child(1),
+    .calendar-days div span:nth-child(3) {
+      width: 2px;
+      height: 0;
+      background-color: var(--color-txt);
+    }
+
+    .calendar-days div:hover span:nth-child(1),
+    .calendar-days div:hover span:nth-child(3) {
+      height: 100%;
+    }
+
+    .calendar-days div span:nth-child(1) {
+      bottom: 0;
+      left: 0;
+    }
+
+    .calendar-days div span:nth-child(3) {
+      top: 0;
+      right: 0;
+    }
+
+    .calendar-days div span:nth-child(2),
+    .calendar-days div span:nth-child(4) {
+      width: 0;
+      height: 2px;
+      background-color: var(--color-txt);
+    }
+
+    .calendar-days div:hover span:nth-child(2),
+    .calendar-days div:hover span:nth-child(4) {
+      width: 100%;
+    }
+
+    .calendar-days div span:nth-child(2) {
+      top: 0;
+      left: 0;
+    }
+
+    .calendar-days div span:nth-child(4) {
+      bottom: 0;
+      right: 0;
+    }
+
+    .calendar-days div:hover span:nth-child(2) {
+      transition-delay: 0.2s;
+    }
+
+    .calendar-days div:hover span:nth-child(3) {
+      transition-delay: 0.4s;
+    }
+
+    .calendar-days div:hover span:nth-child(4) {
+      transition-delay: 0.6s;
+    }
+
+    .calendar-days div.curr-date,
+    .calendar-days div.curr-date:hover {
+      background-color: var(--blue);
+      color: var(--white);
+      border-radius: 50%;
+    }
+
+    .calendar-days div.curr-date span {
+      display: none;
+    }
+
+    .month-picker {
+      padding: 5px 10px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .month-picker:hover {
+      background-color: var(--color-hover);
+    }
+
+    .year-picker {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .year-change {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin: 0 10px;
+      cursor: pointer;
+    }
+
+    .calendar-footer {
+      padding: 10px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .toggle {
+      display: flex;
+    }
+
+    .toggle span {
+      margin-right: 10px;
+      color: var(--color-txt);
+    }
+
+    .dark-mode-switch {
+      position: relative;
+      width: 48px;
+      height: 25px;
+      border-radius: 14px;
+      background-color: var(--bg-second);
+      cursor: pointer;
+    }
+
+    .dark-mode-switch-ident {
+      width: 21px;
+      height: 21px;
+      border-radius: 50%;
+      background-color: var(--bg-main);
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      transition: left 0.2s ease-in-out;
+    }
+
+    .dark .dark-mode-switch .dark-mode-switch-ident {
+      top: 2px;
+      left: calc(2px + 50%);
+    }
+
+    .month-list {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: var(--bg-main);
+      padding: 10px;
+      grid-template-columns: repeat(3, auto);
+      gap: 2px;
+      display: grid;
+      transform: scale(1.3);
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .month-list.show {
+      padding: 10px 0;
+      transform: scale(1);
+      visibility: visible;
+      pointer-events: visible;
+      transition: all 0.2s ease-in-out;
+      background-color: var(--bg-main);
+      color: var(--color-text);
+      opacity: 0.8;
+    }
+
+    .month-list>div {
+      display: grid;
+      place-items: center;
+    }
+
+    .month-list>div>div {
+      width: 100%;
+      padding: 5px 20px;
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+      color: var(--color-txt);
+    }
+
+    .month-list>div>div:hover {
+      background-color: var(--color-hover);
+    }
+
+    @keyframes to-top {
+      0% {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- start header section  -->
+  <header class="header">
+    <a class="brand" href="index.html">Artica</a>
+    <div class="menu-btn"></div>
+    <div class="navigation">
+      <div class="navigation-items">
+        <a href="index.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Explor</a>
+        <a href="#">Gallery</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </header>
+  <!-- end header section  -->
+  <section class="demo-section">
+    <h4 class="text-center mb-3" style="font-weight: 600;">Request A Demo </h4>
+    <div class="container col-md-6">
+      <div class="row justify-content-center">
+        <div class="calendar col-md-7">
+          <div class="calendar-header">
+            <span class="month-picker" id="month-picker">February</span>
+            <div class="year-picker d-flex align-items-baseline">
+              <span class="year-change" id="prev-year">
+                <pre><i class="fa-solid fa-chevron-left"></i></pre>
+              </span>
+              <span id="year"></span>
+              <span class="year-change" id="next-year">
+                <pre><i class="fa-solid fa-chevron-right"></i></pre>
+              </span>
+            </div>
+          </div>
+          <div class="calendar-body">
+            <div class="calendar-week-day">
+              <div>Sun</div>
+              <div>Mon</div>
+              <div>Tue</div>
+              <div>Wed</div>
+              <div>Thu</div>
+              <div>Fri</div>
+              <div>Sat</div>
+            </div>
+            <div class="calendar-days"></div>
+          </div>
+          <div class="month-list"></div>
+        </div>
+        <div class="col-md-5 details-section">
+          <div class="details-header">
+            <h4>Meeting duration</h4>
+            <p>45 mins</p>
+          </div>
+          <div class="time-slots">
+            <h5>What time works best?</h5>
+            <p>Showing times for <strong>May 22, 2024</strong></p>
+            <div class="time-options">
+              <button class="btn btn-outline-primary">12:00 pm</button>
+              <button class="btn btn-outline-primary">12:30 pm</button>
+              <button class="btn btn-outline-primary">1:00 pm</button>
+              <button class="btn btn-outline-primary">3:00 pm</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- start footer section  -->
+  <div class="footer">
+    <div class="top">
+      <div>
+        <h1>Artica</h1>
+        <p>Choose your favourita plan.</p>
+      </div>
+      <div>
+        <a href="#" target="blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="#" target="blank">
+          <i class="fa-brands fa-square-github"></i>
+        </a>
+        <a href="#" target="blank">
+          <i class="fa-brands fa-square-whatsapp"></i>
+        </a>
+        <a href="#" target="blank">
+          <i class="fa-brands fa-square-facebook"></i>
+        </a>
+      </div>
+    </div>
+    <div class="bottom">
+      <div>
+        <h4>Project</h4>
+        <a href="#">Changelog</a>
+        <a href="#">Status</a>
+        <a href="#">License</a>
+        <a href="#">All Versions</a>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <a href="#" target="blank">
+          Github
+        </a>
+        <a href="#" target="blank">
+          Issues
+        </a>
+        <a href="#" target="blank">
+          Projects
+        </a>
+        <a href="#" target="blank">
+          Linked In
+        </a>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <a href="#">Support</a>
+        <a href="#">Troubleshooting</a>
+        <a href="#">Contact Us</a>
+        <a href="#">All Versions</a>
+      </div>
+      <div>
+        <h4>Others</h4>
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">License</a>
+      </div>
+    </div>
+  </div>
+  <!-- end footer section  -->
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    let calendar = document.querySelector(".calendar");
+
+    const month_names = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
+    isLeapYear = (year) => {
+      return (
+        (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) ||
+        (year % 100 === 0 && year % 400 === 0)
+      );
+    };
+
+    getFebDays = (year) => {
+      return isLeapYear(year) ? 29 : 28;
+    };
+
+    generateCalendar = (month, year) => {
+      let calendar_days = calendar.querySelector(".calendar-days");
+      let calendar_header_year = calendar.querySelector("#year");
+
+      let days_of_month = [
+        31,
+        getFebDays(year),
+        31,
+        30,
+        31,
+        30,
+        31,
+        31,
+        30,
+        31,
+        30,
+        31,
+      ];
+
+      calendar_days.innerHTML = "";
+
+      let currDate = new Date();
+      if (!month) month = currDate.getMonth();
+      if (!year) year = currDate.getFullYear();
+
+      let curr_month = `${month_names[month]}`;
+      month_picker.innerHTML = curr_month;
+      calendar_header_year.innerHTML = year;
+
+      // get first day of month
+
+      let first_day = new Date(year, month, 1);
+
+      for (let i = 0; i <= days_of_month[month] + first_day.getDay() - 1; i++) {
+        let day = document.createElement("div");
+        if (i >= first_day.getDay()) {
+          day.classList.add("calendar-day-hover");
+          day.innerHTML = i - first_day.getDay() + 1;
+          day.innerHTML += `<span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>`;
+          if (
+            i - first_day.getDay() + 1 === currDate.getDate() &&
+            year === currDate.getFullYear() &&
+            month === currDate.getMonth()
+          ) {
+            day.classList.add("curr-date");
+          }
+        }
+        calendar_days.appendChild(day);
+      }
+    };
+
+    let month_list = calendar.querySelector(".month-list");
+
+    month_names.forEach((e, index) => {
+      let month = document.createElement("div");
+      month.innerHTML = `<div data-month="${index}">${e}</div>`;
+      month.querySelector("div").onclick = () => {
+        month_list.classList.remove("show");
+        curr_month.value = index;
+        generateCalendar(index, curr_year.value);
+      };
+      month_list.appendChild(month);
+    });
+
+    let month_picker = calendar.querySelector("#month-picker");
+
+    month_picker.onclick = () => {
+      month_list.classList.add("show");
+    };
+
+    let currDate = new Date();
+
+    let curr_month = { value: currDate.getMonth() };
+    let curr_year = { value: currDate.getFullYear() };
+
+    generateCalendar(curr_month.value, curr_year.value);
+
+    document.querySelector("#prev-year").onclick = () => {
+      --curr_year.value;
+      generateCalendar(curr_month.value, curr_year.value);
+    };
+
+    document.querySelector("#next-year").onclick = () => {
+      ++curr_year.value;
+      generateCalendar(curr_month.value, curr_year.value);
+    };
+
+    let dark_mode_toggle = document.querySelector(".dark-mode-switch");
+
+    dark_mode_toggle.onclick = () => {
+      document.querySelector("body").classList.toggle("light");
+      document.querySelector("body").classList.toggle("dark");
+    };
+
+    // Back to top
+    // Back to top button
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 900) {
+        $(".back-to-top").fadeIn("slow");
+      } else {
+        $(".back-to-top").fadeOut("slow");
+      }
+    });
+    $(".back-to-top").click(function () {
+      $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
+      return false;
+    });
+
+  </script>
+</body>
+
+</html>
