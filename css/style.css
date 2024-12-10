@@ -141,6 +141,13 @@ header .navigation .navigation-items .btn-request:hover {
   opacity: 1;
 }
 
+#dark-mode-toggle i {
+  padding-left: 20px;
+  font-size: 20px;
+  color: var(--color-text) !important;
+  cursor: pointer;
+}
+
 /* header .navigation .navigation-items a:before {
   content: '';
   position: absolute;
@@ -800,6 +807,7 @@ section {
 }
 
 .integration-content h2 {
+  color: var(--color-white);
   font-size: 45px;
   margin-bottom: 20px;
   letter-spacing: 1.5px;
@@ -807,12 +815,14 @@ section {
 }
 
 .integration-content h2 span {
+  color: var(--color-white);
   font-size: 45px;
   margin-bottom: 20px;
   letter-spacing: 1px !important;
 }
 
 .integration-content p {
+  color: var(--color-white);
   font-size: 1.2em;
   margin-bottom: 40px;
 }
@@ -1063,8 +1073,9 @@ section {
 
 .deployment-title {
   font-size: 24px;
+  font-weight: 600;
   margin-bottom: 10px;
-  color: var(--bg-dark);
+  color: var(--text-dark);
 }
 
 .deployment-description {
