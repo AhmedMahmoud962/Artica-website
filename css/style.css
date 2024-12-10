@@ -1217,40 +1217,18 @@ section {
 .requsetDemo-section {
   padding: 50px 15px;
   text-align: center;
+  background: linear-gradient(-45deg, #495fef, #004e92);
 }
 
 /* Title Styling */
-.requsetDemo-title {
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--bg-second);
-  margin-bottom: 20px;
-}
+
 
 .requsetDemo-description {
   font-size: 1rem;
-  color: var(--bg-second);
+  color: var(--color-text);
   max-width: 800px;
   margin: 0 auto 30px auto;
   line-height: 1.6;
-}
-
-/* Service Button Styling */
-.service-button {
-  display: inline-block;
-  padding: 12px 30px;
-  font-size: 1.1rem;
-  color: var(--color-text);
-  background-color: var(--services-border);
-  text-decoration: none;
-  border-radius: 5px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-/* Wobble Animation on Hover */
-.service-button:hover {
-  /* transform: scale(1.05); */
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .effect-card {
@@ -1265,15 +1243,17 @@ section {
   background-color: var(--bg-btn);
   color: var(--color-text);
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: transform 0.4s ease-in-out;
+  width: 220px;
+  font-size: 17px;
+  font-weight: bold;
 }
 
 .service-button:hover {
   animation: wobble 1s ease-in-out;
-  background-color: var(--bg-body);
-  color: var(--bg-btn);
-  border: 1px solid var(--bg-btn);
+  background-color: #000;
+  color: #fff;
 }
 
 /* Define the wobble animation */
@@ -1323,7 +1303,9 @@ section {
   .service-button {
     font-size: 1rem;
     padding: 10px 25px;
+    width: 180px;
   }
+
 }
 
 @media (max-width: 480px) {
