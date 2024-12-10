@@ -10,10 +10,13 @@
   --bg-body: #fff;
   --bg-dark: #000;
   --bg-header: #000;
+  --bg-header-scroll: #000;
   --bg-second: #79788c;
   --bg-hover: rgba(1, 1, 1, 0.3);
   --color-hover: #323048;
   --color-text: #fff;
+  --color-text-scrolled: #fff;
+  --color-white: #fff;
   --text-dark: #000;
   --bg-home: #2694e9;
   --bg-btn: #2694e9;
@@ -25,6 +28,31 @@
   --color-gray: #333;
   --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   --tw-bg-opacity: 1;
+}
+
+:root.dark-mode {
+  --bg-body: #121212;
+  --bg-dark: #1e1e1e;
+  --bg-header: #1f1f1f;
+  --bg-header-scroll: #fff;
+  --bg-second: #2c2c2c;
+  --color-hover: #e5e5e5;
+  --color-text: #000;
+  --text-dark: #fff;
+  --color-text-scrolled: #000;
+  --bg-home: #1f78cc;
+  --bg-btn: #1a73e8;
+  --header-underline: #3492f0;
+  --services-bg: #004d99;
+  --services-border: #797987;
+  --bg-btn-hover: #444;
+  --color-icon: #78a5ff;
+  --color-gray: #fff;
+  --shadow: rgba(0, 0, 0, 0.5) 0px 7px 29px 0px;
+}
+
+body {
+  background-color: var(--bg-body);
 }
 
 /* scroll */
@@ -60,7 +88,7 @@ header {
 }
 
 header.scrolled {
-  background-color: var(--bg-header);
+  background-color: var(--bg-header-scroll);
   /* Change to your desired dark color */
 }
 
@@ -70,11 +98,16 @@ header.scrolled {
 }
 
 header .brand {
-  color: var(--color-text);
+  color: var(--color-white);
   font-size: 30px;
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
+}
+
+header.scrolled .brand,
+header.scrolled .navigation .navigation-items a {
+  color: var(--color-text-scrolled);
 }
 
 header .navigation {
@@ -83,7 +116,7 @@ header .navigation {
 
 header .navigation .navigation-items a {
   position: relative;
-  color: var(--color-text);
+  color: var(--color-white);
   font-size: 17px;
   font-weight: 500;
   text-decoration: none;
@@ -96,17 +129,16 @@ header .navigation .navigation-items .btn-request {
   border: none;
   border-radius: 20px;
   background-color: var(--bg-btn);
-  color: var(--color-text);
+  color: var(--color-white) !important;
   font-size: 15px;
   font-weight: 500;
   text-decoration: none;
   transition: 0.5s ease;
+  opacity: 0.9;
 }
 
 header .navigation .navigation-items .btn-request:hover {
-  background-color: var(--color-text);
-  color: var(--bg-btn);
-
+  opacity: 1;
 }
 
 /* header .navigation .navigation-items a:before {
@@ -135,6 +167,8 @@ header .navigation .navigation-items a:hover:before {
   font-weight: 700;
   font-size: 32px;
   text-align: center;
+  color: var(--text-dark);
+
 }
 
 .header-section .title:before {
@@ -190,7 +224,7 @@ section {
 
 .home .content {
   z-index: 888;
-  color: var(--color-text);
+  color: var(--color-white);
   width: 70%;
   margin-top: 50px;
 }
@@ -236,7 +270,7 @@ section {
 }
 
 .home .media-icon a {
-  color: var(--color-text);
+  color: var(--color-white);
   font-size: 25px;
   transition: 0.5s ease;
 }
@@ -312,6 +346,10 @@ section {
     align-items: center;
     border-radius: 5px;
     box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+  }
+
+  header .navigation.active .navigation-items a {
+    color: var(--text-dark);
   }
 
   .menu-btn {
@@ -540,7 +578,7 @@ section {
 .about-section {
   background: url(../img//m1.jpg) no-repeat left;
   background-size: 55%;
-  background-color: #fdfdfd;
+  background-color: var(--bg-body);
   overflow: hidden;
   padding: 50px 0;
   margin: 40px;
@@ -549,11 +587,12 @@ section {
 .inner-container {
   width: 55%;
   float: right;
-  background-color: #fdfdfd;
+  background-color: var(--bg-body);
   padding: 80px;
 }
 
 .inner-container h1 {
+  color: var(--text-dark);
   margin-bottom: 30px;
   font-size: 30px;
   font-weight: 900;
@@ -573,6 +612,7 @@ section {
   font-weight: 700;
   font-size: 13px;
   margin-bottom: 40px;
+  color: var(--text-dark);
 }
 
 .skills span {
@@ -581,16 +621,17 @@ section {
 
 .btn-read {
   border: none;
-  color: var(--white);
+  color: var(--color-white);
   background-color: var(--bg-btn);
   border-radius: 20px;
   padding: 12px 25px;
   font-size: 16px;
+  opacity: 1;
   transition: transform 0.4s ease-in-out, background-color 0.4s ease-in-out;
 }
 
 .btn-read:hover {
-  background-color: var(--bg-dark);
+  opacity: .9;
 }
 
 @media screen and (max-width:1200px) {
@@ -851,6 +892,7 @@ section {
   margin-bottom: 25px;
   font-weight: 700;
   font-size: 32px;
+  color: var(--text-dark);
 }
 
 .section-services .header-section .title:before {

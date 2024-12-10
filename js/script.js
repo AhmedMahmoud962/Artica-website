@@ -1,3 +1,27 @@
+// Function to toggle dark mode
+function toggleDarkMode() {
+  const rootElement = document.documentElement;
+  const toggleButtonIcon = document.querySelector("#dark-mode-toggle i");
+
+  // Toggle dark mode class
+  const isDarkMode = rootElement.classList.toggle("dark-mode");
+
+  // Change the icon dynamically
+  if (isDarkMode) {
+    toggleButtonIcon.classList.remove("fa-moon");
+    toggleButtonIcon.classList.add("fa-sun");
+  } else {
+    toggleButtonIcon.classList.remove("fa-sun");
+    toggleButtonIcon.classList.add("fa-moon");
+  }
+}
+
+// Initialize dark mode toggle on page load
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleButton = document.getElementById("dark-mode-toggle");
+  toggleButton.addEventListener("click", toggleDarkMode);
+});
+
 // Get the header element
 const header = document.querySelector("header");
 
