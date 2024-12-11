@@ -106,7 +106,8 @@ body {
 
 header.scrolled .menu>ul>li,
 header.scrolled .logo a,
-header.scrolled #dark-mode-toggle {
+header.scrolled #dark-mode-toggle,
+.header .mobile-menu-trigger {
   color: var(--color-text-scrolled);
 }
 
