@@ -16,6 +16,7 @@
   --bg-hover: rgba(1, 1, 1, 0.3);
   --bg-deployment: #c5e1ff4a;
   --bg-pricing: #fff;
+  --bg-subscribe: #111111;
   --bg-demo: #fff;
   --bg-footer: #000;
   --bg--days-hover: #f2f2f2;
@@ -49,6 +50,7 @@
   --bg-deployment: #021430;
   --bg-demo: #021430;
   --bg-pricing: #021430;
+  --bg-subscribe: #0e2e5e;
   --bg-footer: #12284dc7;
   --bg--days-hover: rgba(174, 174, 174, 0.749);
   --color-hover: #e5e5e5;
@@ -1336,6 +1338,47 @@ section {
   object-fit: cover;
 }
 
+.subscribe-section {
+  background-color: var(--bg-subscribe);
+  min-height: 300px;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  margin: 20px;
+}
+
+.subscribe-section .subscribe-title {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  max-width: 800px;
+}
+
+.cta-button {
+  background: linear-gradient(to right, #FF3366, #9933FF);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.125rem;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 51, 102, 0.4);
+}
+
+
 /* Responsive styles */
 @media screen and (max-width: 1200px) {
 
@@ -1380,6 +1423,16 @@ section {
   .wizard-progress img {
     max-width: 100%;
   }
+
+  .subscribe-section .subscribe-title {
+    font-size: 2.5rem;
+    padding: 0 1rem;
+  }
+
+  .subscribe-section {
+    margin: 10px;
+    min-height: 300px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1389,6 +1442,19 @@ section {
 
   .integration-content h2 span {
     font-size: 25px;
+  }
+
+  .subscribe-section .subscribe-title {
+    font-size: 2rem;
+  }
+
+  .cta-button {
+    padding: 14px 28px;
+    font-size: 1rem;
+  }
+
+  .subscribe-section {
+    padding: 3rem 1rem;
   }
 }
 
