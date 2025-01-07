@@ -11,7 +11,7 @@
   --bg-dark: #000;
   --bg-header: #000;
   --bg-header-scroll: #000;
-  --bg-header-fixed :#000;
+  --bg-header-fixed: #000;
   --bg-second: #79788c;
   --bg-hover: rgba(1, 1, 1, 0.3);
   --bg-deployment: #c5e1ff4a;
@@ -43,7 +43,7 @@
   --bg-dark: #021430;
   --bg-header: #021430;
   --bg-header-scroll: #0e2e5e;
-  --bg-header-fixed :#162a48;
+  --bg-header-fixed: #162a48;
   --bg-second: #2c2c2c;
   --bg-deployment: #021430;
   --bg-demo: #021430;
@@ -99,7 +99,7 @@ body {
   display: block;
   width: 100%;
   z-index: 999;
-  padding: 5px;
+  padding: 10px;
   position: fixed;
   top: 0;
   left: 0;
@@ -133,7 +133,7 @@ header.scrolled #dark-mode-toggle,
 }
 
 .header .logo a {
-  font-size: 25px;
+  font-size: 30px;
   color: var(--color-white);
   font-weight: 700;
   text-decoration: none;
@@ -160,8 +160,8 @@ header.scrolled #dark-mode-toggle,
 }
 
 .header .menu>ul>li>a {
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 600;
   color: var(--text-white) !important;
   position: relative;
   text-transform: capitalize;
@@ -386,6 +386,7 @@ header.scrolled #dark-mode-toggle,
   }
 
   .header .menu>ul>li>a {
+    font-size: 16px;
     line-height: 50px;
     height: 50px;
     padding: 0 50px 0 15px;
@@ -645,11 +646,11 @@ section {
 }
 
 .home .content h1 {
-  font-size: 35px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  /* line-height: 75px; */
+  font-size: 3.75rem;
+  font-weight: 700;
+  /* text-transform: uppercase; */
+  letter-spacing: .02em;
+  line-height: 130%;
   margin-bottom: 30px;
 }
 
@@ -745,9 +746,8 @@ section {
   }
 
   .home .content h1 {
-    font-size: 25px;
-    font-weight: 900;
-    margin-bottom: 15px;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
   }
 
   .home .content p {
