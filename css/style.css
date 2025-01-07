@@ -25,6 +25,7 @@
   --color-white: #fff;
   --text-dark: #000;
   --text-secondary: #79788c;
+  --text-border: #ccc;
   --bg-home: #2694e9;
   --bg-btn: #2694e9;
   --demo-shadow: rgba(0, 0, 0, 0.175);
@@ -935,6 +936,7 @@ section {
   background-color: var(--bg-header-scroll);
   padding: 3rem 1rem;
   width: 100%;
+  margin: 70px auto;
 }
 
 .trusted-section .container {
@@ -944,7 +946,7 @@ section {
 
 .trusted-section .container .trusted-heading {
   text-align: center;
-  color: #ccc;
+  color: var(--text-border);
   font-size: 1.25rem;
   margin-bottom: 2rem;
   font-family: Arial, sans-serif;
