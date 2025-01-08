@@ -27,6 +27,7 @@
   --text-dark: #000;
   --text-secondary: #79788c;
   --text-border: #ccc;
+  --text-how-title: #ff0077;
   --bg-home: #2694e9;
   --bg-btn: #2694e9;
   --demo-shadow: rgba(0, 0, 0, 0.175);
@@ -58,6 +59,7 @@
   --text-secondary: #dcdcdc;
   --text-dark: #fff;
   --color-text-scrolled: #fff;
+  --text-how-title: #ff0077;
   --bg-home: #1f78cc;
   --bg-btn: #1a73e8;
   --demo-shadow: rgba(0, 0, 0, 0.5);
@@ -997,6 +999,7 @@ section {
 @media (max-width: 480px) {
   .trusted-section {
     padding: 2rem 0.5rem;
+    margin: 30px auto;
   }
 
   .logo-container {
@@ -1010,6 +1013,123 @@ section {
 }
 
 /* Trusted companies */
+
+/* section how-it-works */
+.how-it-works {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 0px 20px 100px;
+  margin: 120px auto;
+}
+
+.how-it-works .text-section {
+  flex: 1 1 50%;
+  padding: 20px;
+}
+
+.how-it-works .text-section .section-title {
+  color: var(--text-how-title);
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.how-it-works .text-section .subtitle {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+}
+
+.how-it-works .text-section .steps {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.how-it-works .text-section .steps .step {
+  border-bottom: 1px solid var(--text-border);
+  padding: 10px 0;
+  cursor: pointer;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.steps .step .step-number {
+  color: var(--text-how-title);
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.steps .step .step-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--text-dark);
+}
+
+.steps .step .step-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  margin-top: 10px;
+  color: var(--text-secondary);
+}
+
+.steps .step.active .step-content {
+  max-height: 200px;
+  opacity: 1;
+}
+
+.how-it-works .image-section {
+  flex: 1 1 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: radial-gradient(89.72% 84.75% at 49.92% 48.04%, rgba(69, 30, 137, 0.25) 0%, rgba(0, 0, 0, 0.00) 100%);
+  border-radius: 10px 0 0 10px;
+}
+
+.how-it-works .image-section .image-card {
+  width: 70%;
+  height: auto;
+  display: none;
+  padding: 60px 0;
+}
+
+.how-it-works .image-section .image-card.active {
+  display: block;
+}
+
+@media screen and (max-width: 1200px) {
+  .how-it-works {
+    padding: 20px 10px 20px 10px;
+    margin: 50px auto;
+  }
+
+  .how-it-works .image-section {
+    border-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .how-it-works {
+    flex-direction: column;
+    margin: 35px auto;
+  }
+
+  .how-it-works .text-section,
+  .how-it-works .image-section {
+    flex: 1 1 100%;
+    padding: 10px;
+  }
+
+  .step-title {
+    font-size: 20px;
+  }
+}
+
+/* section how-it-works */
 
 /* Start section about */
 .about-section {

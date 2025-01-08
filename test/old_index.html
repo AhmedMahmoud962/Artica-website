@@ -14,6 +14,118 @@
   <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <style>
+    .how-it-works {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #f9f9f9;
+      padding: 20px 0px 20px 100px;
+      margin: 70px auto;
+    }
+
+    .text-section {
+      flex: 1 1 50%;
+      padding: 20px;
+    }
+
+    .section-title {
+      color: #ff0077;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .step {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+      cursor: pointer;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding 0.5s ease;
+    }
+
+    .step-number {
+      color: #ff0077;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .step-title {
+      font-size: 25px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .step-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, opacity 0.5s ease;
+      opacity: 0;
+      margin-top: 10px;
+      color: #555;
+    }
+
+    .step.active .step-content {
+      max-height: 200px;
+      opacity: 1;
+    }
+
+    .image-section {
+      flex: 1 1 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background-color: #000;
+      border-radius: 10px 0 0 10px;
+    }
+
+    .image-card {
+      width: 70%;
+      height: auto;
+      display: none;
+      padding: 60px 0;
+    }
+
+    .image-card.active {
+      display: block;
+    }
+
+    @media screen and (max-width: 1200px) {
+      .how-it-works {
+        padding: 20px 10px 20px 10px;
+      }
+
+      .image-section {
+
+        border-radius: 10px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .how-it-works {
+        flex-direction: column;
+      }
+
+      .text-section,
+      .image-section {
+        flex: 1 1 100%;
+      }
+
+      .step-title {
+        font-size: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -216,7 +328,24 @@
   </section>
   <!-- trusted companies -->
 
-  <!-- How it works  -->
+  <!-- start About section  -->
+  <article class="about-section">
+    <div class="inner-container">
+      <h1>About Us</h1>
+      <p class="text">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur deserunt nemo voluptate possimus? Eveniet
+        odit excepturi facere quo libero, quia aliquid consectetur aliquam. Voluptates quis excepturi quasi dolore
+        officia dolorem.
+      </p>
+      <div class="skills">
+        <span>Privacy protection</span>
+        <span>Secure your payments</span>
+        <span>Keep intruders out</span>
+      </div>
+      <a class="btn-read" href="#">Read More</a>
+    </div>
+  </article>
+
   <section class="how-it-works">
     <div class="text-section">
       <h2 class="section-title">HOW IT WORKS</h2>
@@ -270,7 +399,48 @@
       <img id="step4" class="image-card" src="img/how_it_work4.webp" alt="Step 4">
     </div>
   </section>
-  <!-- How it works  -->
+
+
+
+
+  <!-- <section class="about">
+    <div class="header-section">
+      <h2 class="title">About Us</h2>
+    </div>
+    <div class="about-section">
+      <div class="container-about">
+        <div class="content-about">
+          <h2>Complete protection </h2>
+          <p><strong>Each Kaspersky plan</strong> uses cutting-edge AI technology to detect and stop any type of online
+            threat – even ones that haven’t been seen before. So every time you connect to the internet, we:</p>
+          <ul>
+            <li>
+              <i class="fa fa-check"></i>
+              <span><strong>Protect your privacy</strong> by blocking unauthorised attempts to access your webcam or
+                track
+                your activity on websites.</span>
+            </li>
+            <li>
+              <i class="fa fa-check"></i>
+              <span><strong>Secure your payments</strong> in a hacker-proof Protected Browser when you shop or bank
+                online.</span>
+            </li>
+            <li>
+              <i class="fa fa-check"></i>
+              <span><strong>Keep intruders out</strong> of your network and check websites and emails are safe for you
+                to
+                open.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="image-about">
+          <img src="img/about.png" alt="Kaspersky Protection" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- end About section  -->
+
 
   <!-- start integration section  -->
   <article class="integration">
