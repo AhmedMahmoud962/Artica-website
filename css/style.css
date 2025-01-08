@@ -1086,8 +1086,9 @@ section {
   align-items: center;
   justify-content: center;
   position: relative;
-  background: radial-gradient(89.72% 84.75% at 49.92% 48.04%, rgba(69, 30, 137, 0.25) 0%, rgba(0, 0, 0, 0.00) 100%);
+  background-color: var(--bg-dark);
   border-radius: 10px 0 0 10px;
+  border: 1px solid var(--text-border);
 }
 
 .how-it-works .image-section .image-card {
