@@ -1558,7 +1558,7 @@ section {
   width: 100%;
   padding: 50px 20px;
   max-width: 1350px;
-  margin: 70px auto;
+  margin: 20px auto;
   text-align: left;
 }
 
@@ -1714,7 +1714,6 @@ section {
 
   .usecases {
     padding: 30px 10px;
-    margin: 40px auto;
   }
 
   .usecases .usecases-container {
