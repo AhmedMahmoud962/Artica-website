@@ -41,11 +41,12 @@
   --tw-bg-opacity: 1;
   --pr-white: #000;
   /* --second-color: #0a0a0a; */
+  --color-des: #1a1a1a;
   --color-1-1: #BE2518;
   --color-1-2: #ff6b4f;
-  --cubicbz: cubic-bezier(.9, 0, .1, 1);
+  /* --cubicbz: cubic-bezier(.9, 0, .1, 1);
   --fz-big: 60px;
-  --pd: 50px;
+  --pd: 50px; */
 }
 
 :root.dark-mode {
@@ -78,6 +79,7 @@
   --color-gray: #fff;
   --shadow: rgba(0, 0, 0, 0.5) 0px 7px 29px 0px;
   --pr-white: #fff;
+  --color-des: #cbcbcb;
 }
 
 ol,
@@ -1021,8 +1023,7 @@ section {
 }
 
 /* Trusted companies */
-
-/* section How it works */
+/* how it works  */
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }
@@ -1039,8 +1040,15 @@ section {
   pointer-events: none;
 }
 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 .wrapp-scrolldown {
-  /* background-color: var(--second-color); */
   position: relative;
   width: 100%;
   height: auto;
@@ -1048,17 +1056,12 @@ section {
   z-index: 1;
 }
 
+
 .content {
   width: 100%;
   height: auto;
 }
 
-/* GSAP - scrollTrigger-pinned image Animation */
-/* .spacer {
-width: 100%;
-height: 50vh;
-background-color: #ddd;
-} */
 
 .work {
   display: flex;
@@ -1106,6 +1109,7 @@ background-color: #ddd;
   font-size: 50px;
   text-transform: uppercase;
   color: var(--pr-white);
+  margin-bottom: 20px;
 }
 
 .work__left-h1 .title .stroke {
@@ -1152,8 +1156,8 @@ background-color: #ddd;
   height: 100vh;
   top: 0;
   /* height: 80vh;
-top: 10vh;
-background: #ff6b4f; */
+  top: 10vh;
+  background: #ff6b4f; */
 }
 
 .work__photo {
@@ -1167,7 +1171,7 @@ background: #ff6b4f; */
   width: 100%;
   height: 100%;
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 10px;
   overflow: hidden;
 }
 
@@ -1179,17 +1183,160 @@ background: #ff6b4f; */
   transition: .4s;
 }
 
+
+
+/* section how-it-works */
+.how-it-works {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 60px;
+  margin: 120px auto;
+}
+
+.how-it-works .text-section {
+  flex: 1 1 50%;
+  padding: 20px;
+}
+
+.how-it-works .text-section .section-title {
+  color: var(--header-underline);
+  font-size: 25px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.how-it-works .text-section .subtitle {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+}
+
+.how-it-works .text-section .steps {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.how-it-works .text-section .steps .step {
+  border-bottom: 1px solid var(--text-secondary);
+  padding: 10px 0;
+  cursor: pointer;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.steps .step .step-number {
+  color: var(--header-underline);
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.steps .step .step-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--pr-white);
+}
+
+.steps .step .step-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  margin-top: 10px;
+  color: var(--color-des);
+}
+
+.steps .step.active .step-content {
+  max-height: 200px;
+  opacity: 1;
+}
+
+.step-content p {
+  color: var(--color-des);
+  font-size: 18px;
+  text-align: justify;
+}
+
+.how-it-works .image-section {
+  flex: 1 1 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* background-color: #000; */
+  border-radius: 10px 0 0 10px;
+  /* border: 1px solid var(--text-border); */
+}
+
+.how-it-works .image-section .image-card {
+  width: 70%;
+  height: auto;
+  display: none;
+  padding: 60px 0;
+  border-radius: 7px;
+}
+
+.small-screen {
+  display: none;
+}
+
+.how-it-works .image-section .image-card.active {
+  display: block;
+}
+
 @media screen and (max-width: 1400px) {
   .work {
     padding: 10px;
   }
 }
 
+
 @media screen and (max-width: 1200px) {
   .wrapp-scrolldown {
     display: none;
   }
+
+  .small-screen {
+    display: block;
+  }
+
+  .how-it-works {
+    padding: 20px 10px 20px 10px;
+    margin: 50px auto;
+  }
+
+  .how-it-works .image-section {
+    border-radius: 10px;
+  }
 }
+
+@media screen and (max-width: 768px) {
+  .how-it-works {
+    flex-direction: column;
+    margin: 35px auto;
+    padding: 5px;
+  }
+
+  .how-it-works .text-section,
+  .how-it-works .image-section {
+    flex: 1 1 100%;
+    padding: 10px;
+  }
+
+  .step-title {
+    font-size: 20px;
+  }
+
+  .how-it-works .image-section .image-card {
+    width: 100%;
+    padding: 0;
+    height: 250px;
+    object-fit: cover;
+  }
+}
+
 /* section How it works */
 
 
