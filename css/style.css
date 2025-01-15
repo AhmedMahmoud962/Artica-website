@@ -2646,3 +2646,7 @@ section {
     font-size: 1rem;
   }
 }
+
+.demo-now-section .info {
+  color: var(--color-white);
+}
