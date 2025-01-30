@@ -51,7 +51,7 @@ gsap
       trigger: ".hero-section",
       start: "top top",
       end: "bottom top",
-      scrub: 0.5,
+      scrub: 0.2,
       invalidateOnRefresh: true,
       // markers: true,
     },
@@ -104,7 +104,7 @@ contentWrapper.forEach((contentWrapper) => {
         trigger: contentWrapper,
         start: "center-=100 center",
         end: "center top",
-        scrub: 0.2,
+        scrub: 0.05,
         pin: contentWrapper,
         invalidateOnRefresh: true,
         // markers: true,
@@ -138,7 +138,7 @@ contentWrapper.forEach((contentWrapper) => {
       image,
       {
         autoAlpha: 0,
-        scale: 1.5,
+        scale: .2,
       },
       {
         autoAlpha: 1,
@@ -151,5 +151,5 @@ contentWrapper.forEach((contentWrapper) => {
 gsap.to(".slider-progress-bar", {
   height: "100%",
   ease: "none",
-  scrollTrigger: { scrub: 0.3 },
+  scrollTrigger: { scrub: 0 },
 });
