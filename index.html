@@ -11,317 +11,10 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- flowbite  -->
   <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css" />
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/story.css" />
   <link rel="stylesheet" type="text/css" href="css/style.css" />
-  <style>
-    .demo-now-section {
-      /* background-color: red; */
-      padding: 2rem 5rem;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .demo-now-section .info {
-      width: 30%;
-      padding: 0 30px;
-      border-left: 5px solid #6B4CF5;
-      border-radius: 7px;
-    }
-
-    .demo-now-section .info h2 {
-      font-size: 3.5rem;
-      line-height: 1.4;
-      text-transform: uppercase;
-    }
-
-    .demo-now-section .info p {
-      font-size: 1.5rem;
-      text-transform: uppercase;
-    }
-
-    .chat-demo-now {
-      width: 55%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .chat-section {
-      background-color: #ffffff;
-      color: #1A1A1A;
-      line-height: 1.5;
-      height: 60vh;
-      width: 100%;
-      margin: 20px 0;
-      display: flex;
-      flex-direction: column;
-      border-radius: 20px;
-    }
-
-    .chat-section .chat-container {
-      flex-grow: 1;
-      overflow-y: auto;
-      padding: 1rem;
-      position: relative;
-    }
-
-    .chat-section .chat-container .no-data {
-      position: absolute;
-      top: 60%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: #6B4CF5;
-      font-weight: 500;
-    }
-
-    .chat-section .chat-container .no-data h1 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      opacity: 0.8;
-    }
-
-    .chat-section .chat-container .no-data i {
-      font-size: 1.2rem;
-      opacity: 0.8;
-    }
-
-    .message {
-      max-width: 48rem;
-      margin: 1rem auto;
-      display: flex;
-      gap: 1rem;
-    }
-
-    .message.human-message {
-      flex-direction: row-reverse;
-    }
-
-    .avatar {
-      width: 2rem;
-      height: 2rem;
-      border-radius: 0.5rem;
-      background-color: #F0F0F0;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-    }
-
-    .human-avatar {
-      background-color: #E6E6E6;
-    }
-
-    .assistant-avatar {
-      background-color: #EEEDFC;
-      color: #6B4CF5;
-    }
-
-    .message-content {
-      flex-grow: 1;
-      padding: 0.75rem 1rem;
-      border-radius: 0.75rem;
-      max-width: 80%;
-    }
-
-    .human-message .message-content {
-      background-color: #F4F3FF;
-      margin-left: auto;
-    }
-
-    .assistant-message .message-content {
-      background-color: #F5F5F5;
-    }
-
-    .input-container {
-      /* border-top: 1px solid #E5E5E5; */
-      padding: 1rem;
-      background: #ffffff;
-      border-radius: 20px;
-    }
-
-    .input-wrapper {
-      max-width: 48rem;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    .input-form {
-      display: flex;
-      gap: 0.5rem;
-      align-items: flex-end;
-      background: #FFFFFF;
-      border: 1px solid #E5E5E5;
-      border-radius: 0.75rem;
-      padding: 0.75rem;
-    }
-
-    #chat-form .input-textarea {
-      flex-grow: 1;
-      resize: none;
-      border: none;
-      padding: 0.25rem;
-      font-size: 1rem;
-      line-height: 1.5;
-      max-height: 200px;
-      min-height: 24px;
-      font-family: inherit;
-    }
-
-    #chat-form .input-textarea:focus {
-      outline: none;
-    }
-
-    .button-group {
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-    }
-
-    .action-button {
-      padding: 0.5rem;
-      background: none;
-      border: none;
-      border-radius: 0.375rem;
-      cursor: pointer;
-      color: #6B6B6B;
-      transition: background-color 0.2s;
-      width: 2.25rem;
-      height: 2.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .action-button:hover {
-      background-color: #F0F0F0;
-    }
-
-    .send-button {
-      padding: 0.5rem;
-      background-color: #F4F3FF;
-      border: none;
-      border-radius: 0.375rem;
-      cursor: pointer;
-      color: #6B4CF5;
-      transition: all 0.2s;
-      width: 2.25rem;
-      height: 2.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .send-button:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-
-    .send-button:not(:disabled):hover {
-      background-color: #EEEDFC;
-    }
-
-    .file-input {
-      display: none;
-    }
-
-    .file-preview {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem;
-      background-color: #F4F4F4;
-      border-radius: 0.375rem;
-      margin-top: 0.5rem;
-      font-size: 0.875rem;
-    }
-
-    .file-preview button {
-      background: none;
-      border: none;
-      color: #6B6B6B;
-      cursor: pointer;
-      padding: 0.25rem;
-    }
-
-    .file-preview button:hover {
-      color: #FF4444;
-    }
-
-    .upload-progress {
-      height: 3px;
-      background-color: #E5E5E5;
-      border-radius: 1.5px;
-      overflow: hidden;
-      margin-top: 0.25rem;
-    }
-
-    .upload-progress-bar {
-      height: 100%;
-      background-color: #6B4CF5;
-      transition: width 0.3s ease;
-    }
-
-    @media screen and (max-width: 1024px) {
-      .demo-now-section {
-        padding: 2rem;
-      }
-
-      .demo-now-section .info {
-        width: 100%;
-        padding: 0 30px;
-        border-left: 5px solid #6B4CF5;
-        border-radius: 7px;
-      }
-
-      .demo-now-section .info h2 {
-        font-size: 2.5rem;
-      }
-
-      .demo-now-section .info p {
-        font-size: 1.5rem;
-      }
-
-      .chat-demo-now {
-        width: 100%;
-        margin: 0 auto;
-      }
-
-      .chat-section {
-
-        height: 50vh;
-      }
-
-    }
-
-    @media (max-width: 640px) {
-      .demo-now-section {
-        padding: 1rem;
-      }
-
-      .demo-now-section .info p {
-        font-size: 1rem;
-      }
-
-      .input-container {
-        padding: 0.75rem;
-      }
-
-      .message {
-        margin: 1rem auto;
-      }
-
-      .message-content {
-        max-width: 90%;
-      }
-    }
-  </style>
-
 </head>
 
 <body>
@@ -348,37 +41,27 @@
             </div>
             <ul class="menu-main">
               <li>
-                <a href="index.html">Home</a>
+                <a href="#home">Home</a>
               </li>
               <li>
-                <a href="price.html">Pricing</a>
+                <a href="#modules">Modules</a>
               </li>
               <li>
-                <a href="about_us.html">About Us</a>
+                <a href="#demo">Try Demo Now</a>
               </li>
-              <!-- <li class="menu-item-has-children">
-                <a href="#">Blog <i class="fas fa-angle-down"></i></a>
-                <div class="sub-menu single-column-menu">
-                  <ul>
-                    <li><a href="#">Standard Layout</a></li>
-                    <li><a href="#">Grid Layout</a></li>
-                    <li><a href="#">single Post Layout</a></li>
-                  </ul>
-                </div>
-              </li> -->
               <li>
-                <a href="contact_us.html">Contact</a>
+                <a href="#request">Request Demo</a>
               </li>
-              <li><a href="request_demo.html" class="request-mobile">Request a Demo</a></li>
+              <li><a href="https://wa.me/+201033993202" target="_blank" class="request-mobile">Request Demo</a></li>
             </ul>
           </nav>
         </div>
         <!-- menu end here -->
         <div class="header-item item-right ">
-          <a href="request_demo.html" class="btn btn-primary btn-request">Request a Demo</a>
-          <span id="dark-mode-toggle">
+          <a href="https://wa.me/+201033993202" target="_blank" class="btn btn-primary btn-request">Request Demo</a>
+          <!-- <span id="dark-mode-toggle">
             <i class="fa-solid fa-moon"></i>
-          </span>
+          </span> -->
           <!-- mobile menu trigger -->
           <div class="mobile-menu-trigger">
             <span id="menu-toggle"></span>
@@ -387,35 +70,40 @@
       </div>
     </div>
   </header>
-  <!-- <header>
-    <a class="brand" href="index.html">Artica</a>
-    <div class="menu-btn"></div>
-    <div class="navigation">
-      <div class="navigation-items">
-        <a href="index.html">Home</a>
-        <a href="#">About</a>
-        <a href="#">Explor</a>
-        <a href="#">Gallery</a>
-        <a href="#">Contact</a>
-        <a href="request_demo.html" class="btn btn-primary btn-request">Request a Demo</a>
-        <span id="dark-mode-toggle">
-          <i class="fa-solid fa-moon"></i>
-        </span>
-      </div>
-    </div>
-  </header> -->
   <!-- end header section  -->
 
   <!-- start home section  -->
-  <section class="home">
+  <section class="home" id="home">
     <video class="video-silde" src="img/background.mp4" autoplay muted loop>
     </video>
     <div class="content">
       <!-- <h1>Welcome to <br> <span>Artica</span></h1> -->
-      <h1>Elevate Your <br> Business with <br> ARTICA AI</h1>
-      <p>Transform your data assets with advanced algorithms and AI for sustainable growth via robust AIOps.
-      </p>
-      <!-- <a class="btn" href="#">Read More</a> -->
+      <h1>MAKE YOUR ORGANIZATION FUTURE-READY <br> WITH ARTICA AI <br> </h1>
+      <h1 class="sp-headline slide">
+        <span class="sp-words-wrapper">
+          <b class="is-visible text-center">iRPPA <br>
+            <small class="text-center">Intelligent ENETRPRISE ROBOTIC PROCESS <br> AUTOMATION AGENT</small>
+          </b>
+          <b class="text-center">iCRMA <br>
+            <small class="text-center">INTELLIGENT CUSTOMER RELATION MANAGEMENT AGENT</small>
+          </b>
+          <b class="text-center">iKMA <br>
+            <small class="text-center">iKNOWLEDGE MANAGEMENT AGENT</small>
+          </b>
+          <b class="text-center">iHRMA <br>
+            <small class="text-center">INTELLIGENT HUMAN RESOIURCE MANAGEMENT AGENT</small>
+          </b>
+          <b class="text-center">iCMA <br>
+            <small class="text-center">INTELLIGENT CLINIC MANAGEMENT</small>
+          </b>
+        </span>
+      </h1>
+      <!-- <p>Transform your data assets with advanced algorithms and AI for sustainable growth via robust AIOps.
+      </p> -->
+      <div class="buttons-hero d-flex justify-content-center align-items-center flex-wrap ">
+        <a href="#modules" class="discover">Discover Artica </a>
+        <a href="#modules" class="try-demo">Try Demo </a>
+      </div>
       <div class="media-icon">
         <a href="#"><i class="fab fa-facebook-f"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -425,79 +113,32 @@
   </section>
   <!-- end home section  -->
 
-  <!-- modules -->
-  <article class="modules">
-    <div class="header-section">
-      <h2 class="title">Modules</h2>
+  <!-- About section -->
+  <section class="about-us" id="about">
+    <div class="main-img">
+      <img src="img/about.png" alt="about">
     </div>
-    <div class="module-container">
-      <div class="module-card module-erp">
-        <div class="module-content">
-          <img src="img/module1.png" alt="ERP Icon" class="module-icon">
-          <h3>ERP</h3>
-          <p>Accelerate your organization’s growth with an agile, scalable, and...</p>
-          <a href="#" class="btn btn-more">More info</a>
-        </div>
-      </div>
-      <div class="module-card module-retail">
-        <div class="module-content">
-          <img src="img/module2.png" alt="ERP Icon" class="module-icon">
-          <h3>Retail Management</h3>
-          <p>True Omnichannel, All-in-One Retail Management Solution</p>
-          <a href="#" class="btn btn-more">More info</a>
-        </div>
-      </div>
-      <div class="module-card module-hospitality">
-        <div class="module-content">
-          <img src="img/module1.png" alt="ERP Icon" class="module-icon">
-          <h3>knowledge Management</h3>
-          <p>Next-Gen Property Management Software</p>
-          <a href="#" class="btn btn-more">More info</a>
-        </div>
-      </div>
-      <div class="module-card module-school">
-        <div class="module-content">
-          <img src="img/module3.png" alt="ERP Icon" class="module-icon">
-          <h3>Module Management</h3>
-          <p>Ace pedagogical management with Priority SMIS</p>
-          <a href="#" class="btn btn-more">More info</a>
-        </div>
-      </div>
-      <div class="module-card module-erp">
-        <div class="module-content">
-          <img src="img/module1.png" alt="ERP Icon" class="module-icon">
-          <h3>ERP</h3>
-          <p>Accelerate your organization’s growth with an agile, scalable, and...</p>
-          <a href="#" class="btn btn-more">More info</a>
-        </div>
-      </div>
-      <div class="module-card module-retail">
-        <div class="module-content">
-          <img src="img/module2.png" alt="ERP Icon" class="module-icon">
-          <h3>Retail Management</h3>
-          <p>True Omnichannel, All-in-One Retail Management Solution</p>
-          <a href="#" class="btn btn-more">More info</a>
-        </div>
-      </div>
-      <div class="module-card module-hospitality">
-        <div class="module-content">
-          <img src="img/module1.png" alt="ERP Icon" class="module-icon">
-          <h3>knowledge Management</h3>
-          <p>Next-Gen Property Management Software</p>
-          <a href="#" class="btn btn-more">More info</a>
-        </div>
-      </div>
-      <div class="module-card module-school">
-        <div class="module-content">
-          <img src="img/module3.png" alt="ERP Icon" class="module-icon">
-          <h3>Module Management</h3>
-          <p>Ace pedagogical management with Priority SMIS</p>
-          <a href="#" class="btn btn-more">More info</a>
-        </div>
+    <div class="about-content">
+      <h4>About US</h4>
+      <h1>PLATFORM THAT MAKES YOUR ORGANIZATION FUTURE-READY</h1>
+      <hr>
+      <p>
+        Future readiness is the state of being fully prepared for the future. Future-ready organizations anticipate
+        systemic shifts in their environment and understand their long-term impacts, using all possible capabilities of
+        ARTIFICIAL INTELLIGENCE. <br>
+        ARTICA is a HOLISTIC ARTIFICIAL INTELLIGENCE PLATFORM, that integrates different AI Algorithm providers into
+        business automation modules, that gives incredible AI features, benefits and implementations. ARTICA Could make
+        your organization A future-ready, creating stability and continuity in times of uncertainty and rapid change.
+        <br>
+        Whether you’re just starting your journey toward future readiness — or are well on your way — now is the right
+        time to build and level-up the strategic foresight capabilities your organization needs.
+      </p>
+      <div class="last-part">
+        <a href="https://wa.me/+201033993202" target="_blank" class="btn btn-primary rounded-5">Contact US</a>
       </div>
     </div>
-  </article>
-  <!-- modules -->
+  </section>
+  <!-- About section -->
 
   <!-- trusted companies -->
   <section class="trusted-section">
@@ -524,179 +165,193 @@
   </section>
   <!-- trusted companies -->
 
-  <!-- section how it works -->
-  <main>
-    <!-- in large screens  -->
-    <section class="wrapp-scrolldown">
-      <!-- <div class="spacer"></div> -->
-      <section class="work">
-        <!-- left -->
-        <div class="work__right">
-          <div class="work__right-b1">
-            <div class="work__photo">
-              <!-- img 1 -->
-              <div class="work__photo-item" title="1">
-                <img src="img/m1.jpg" alt="1">
-              </div>
-              <!-- img 2 -->
-              <div class="work__photo-item" title="2">
-                <img src="img/m2.jpg" alt="2">
-              </div>
-              <!-- img 3 -->
-              <div class="work__photo-item" title="3">
-                <img src="img/m3.jpg" alt="3">
-              </div>
-              <!-- img 4 -->
-              <div class="work__photo-item" title="4">
-                <img src="img/m1.jpg" alt="4">
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- right -->
-        <div class="work__left">
-
-          <div class="work__text">
-            <!-- info -->
-            <div class="work__info">
-              <div class="work__left-h1">
-                <span class="work__num">01</span>
-                <h2 class="title">First Section <span class="stroke">Title</span></h2>
-                <p class="text">
-                  Every day your life exposes you and your cells to harmful stressors such as pollution, UV radiation,
-                  poor diet, too little sleep, smoking, life stress, and alcohol.
-                </p>
-                <!-- <a href="Product_details.html" class="work__link">View More</a> -->
-              </div>
-            </div>
-            <!-- info -->
-            <div class="work__info">
-              <div class="work__left-h1">
-                <span class="work__num">02</span>
-                <h2 class="title">Second Section <span class="stroke">Title</span></h2>
-                <p class="text">
-                  Every day your life exposes you and your cells to harmful stressors such as pollution, UV radiation,
-                  poor diet, too little sleep, smoking, life stress, and alcohol.
-                </p>
-              </div>
-            </div>
-            <!-- info -->
-            <div class="work__info">
-              <div class="work__left-h1">
-                <span class="work__num">03</span>
-                <h2 class="title">Third Section <span class="stroke">Title</span></h2>
-                <p class="text">
-                  Every day your life exposes you and your cells to harmful stressors such as pollution, UV radiation,
-                  poor diet, too little sleep, smoking, life stress, and alcohol.
-                </p>
-              </div>
-            </div>
-            <!-- info -->
-            <div class="work__info">
-              <div class="work__left-h1">
-                <span class="work__num">04</span>
-                <h2 class="title">Fourth Section <span class="stroke">Title</span></h2>
-                <p class="text">
-                  Every day your life exposes you and your cells to harmful stressors such as pollution, UV radiation,
-                  poor diet, too little sleep, smoking, life stress, and alcohol.
-                </p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </section>
-      <!-- <div class="spacer"></div> -->
-    </section>
-
-    <!-- in small screens -->
-    <section class="how-it-works small-screen">
-      <div class="text-section">
-        <h2 class="section-title">HOW IT WORKS</h2>
-        <p class="subtitle">
-          Add your data sources, train the AI, customize it to your liking, and add it to your website.
-        </p>
-        <div class="steps">
-          <div class="step active" data-target="#step1">
-            <span class="step-number">01</span>
-            <h3 class="step-title">Import your data</h3>
-            <div class="step-content">
-              <p>
-                Connect your data sources, upload files, or add a website for crawling, and Chatbase will use all of
-                that
-                data to train your chatbot.
-              </p>
-            </div>
-          </div>
-          <div class="step" data-target="#step2">
-            <span class="step-number">02</span>
-            <h3 class="step-title">Customize behavior & appearance</h3>
-            <div class="step-content">
-              <p>
-                Adjust how the chatbot interacts with users and customize its appearance to match your brand.
-              </p>
-            </div>
-          </div>
-          <div class="step" data-target="#step3">
-            <span class="step-number">03</span>
-            <h3 class="step-title">Embed on your website</h3>
-            <div class="step-content">
-              <p>
-                Copy and paste the code snippet to embed the chatbot on your website seamlessly.
-              </p>
-            </div>
-          </div>
-          <div class="step" data-target="#step4">
-            <span class="step-number">04</span>
-            <h3 class="step-title">Integrate with your tools</h3>
-            <div class="step-content">
-              <p>
-                Easily integrate the chatbot with your favorite tools and platforms for enhanced functionality.
-              </p>
-            </div>
-          </div>
-        </div>
+  <!-- display modules -->
+  <main class="main-modules mb-5 pb-5" id="modules">
+    <section class="hero-section section-story" id="section-00">
+      <div class="hero-content-our-story">
+        <h5 class="hero-subtitle"></h5>
+        <h1 class="hero-title">
+          <span></span> <br />
+          <span></span>
+        </h1>
+        <a href="#section-01" class="hero-action">
+        </a>
       </div>
-      <div class="image-section">
-        <img id="step1" class="image-card active" src="img/m1.jpg" alt="Step 1">
-        <img id="step2" class="image-card" src="img/m2.jpg" alt="Step 2">
-        <img id="step3" class="image-card" src="img/m3.jpg" alt="Step 3">
-        <img id="step4" class="image-card" src="img/m1.jpg" alt="Step 4">
+    </section>
+    <section class="content-section section-story">
+      <div class="container-our-story">
+        <div class="content-wrapper" id="section-01">
+          <div class="content-row">
+            <div class="content-image">
+              <img src="img/step-1.png" alt="" />
+            </div>
+            <div class="content-content">
+              <h5 class="content-subtitle">
+                <span class="counter">ARTICA iRPPA
+                </span>
+              </h5>
+              <h2 class="content-title">
+                <span>INTELLIGENT ENETRPRISE ROBOTIC</span>
+                <span>PROCESS AUTOMATION AGENT</span>
+
+              </h2>
+              <p class="content-copy">
+                <span class="fw-semibold">FROM ERP TO RPA</span>
+                iERPA AGENTS will transform company business processes from ERP automation into next level of ROBOTIC
+                PROCESS AUTOMATION. Our iRPPA will automate routine and repetitive tasks—or entire workflows—using
+                “bots.” Applications include data extraction, data entry and file migration. Using RPA, an ERP system
+                might automatically generate reports, distribute key human resources documents, or automatically provide
+                data management for customer and employee information.
+                OUR AI-powered RPA AGENTS can automate routine tasks, provide advanced data analysis and forecasting,
+                and enhance decision-making. The goal of AI in ERP is to improve operational efficiency and streamline
+                business processes.
+              </p>
+              <div class="content-copy">
+                <p>Some common <span class="highlight">iRPAA</span> implementations include:</p>
+                <ul style="margin-left: 40px;  list-style-type: disc;">
+                  <li style="margin: 5px 0;">Predictive maintenance</li>
+                  <li style="margin: 5px 0;">Demand forecasting and spending management</li>
+                  <li style="margin: 5px 0;">Automated invoice processing</li>
+                  <li style="margin: 5px 0;">Guided purchasing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-wrapper" id="section-02">
+          <div class="content-row">
+            <div class="content-image">
+              <img src="img/step-2.png" alt="" />
+            </div>
+            <div class="content-content">
+              <h5 class="content-subtitle">
+                <span class="counter mb-5 pb-5">ARTICA iCRMA </span>
+              </h5>
+              <h2 class="content-title">
+                <span>INTELLIGENT CUSTOMER RELATION MANAGEMENT AGENT</span>
+              </h2>
+              <p class="content-copy">
+                AI-enabled CUSTOMER SUPPORT & SERVICE systems dramatically improve the customer relationship management
+                (CRM) process. Using NPL and ML technologies an AI POWERED iCRM can automatically resolve common issues,
+                improve the user experience .
+              </p>
+              <div class="content-copy">
+                <p>Some common <span class="highlight">iCRM </span> implementations include:</p>
+                <ul style="margin-left: 40px;  list-style-type: disc;">
+                  <li style="margin: 5px 0;">Customer Service Chatbot</li>
+                  <li style="margin: 5px 0;">Preparation of account briefings </li>
+                  <li style="margin: 5px 0;">After sales surveys</li>
+                  <li style="margin: 5px 0;">Post-delivery updates</li>
+                  <li style="margin: 5px 0;">Newsletters and emails sorting and replying</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-wrapper" id="section-03">
+          <div class="content-row">
+            <div class="content-image">
+              <img src="img/step-3.png" alt="" />
+            </div>
+            <div class="content-content">
+              <h5 class="content-subtitle">
+                <span class="counter mb-5 pb-5">ARTICA iKMA</span>
+              </h5>
+              <h2 class="content-title">
+                <span>iKNOWLEDGE MANAGEMENT AGENT</span>
+              </h2>
+              <p class="content-copy">
+                Our iKMA is Guided AI Knowledge Management tool that’s designed to centralize organization’s data into a
+                single hub for all organization knowledge. Our innovative platform simplifies creating user-friendly
+                external and internal knowledge bases. With iKMA, organizations will receive unmatched and valuable
+                support to its different structure forms and AI Agents.
+              </p>
+              <div class="content-copy">
+                <p>Some common <span class="highlight">iKMA </span> implementations include:</p>
+                <ul style="margin-left: 40px;  list-style-type: disc;">
+                  <li style="margin: 5px 0;">AI search for instant answers </li>
+                  <li style="margin: 5px 0;">Max AI for lightning speed content creation </li>
+                  <li style="margin: 5px 0;">Content repurposing </li>
+                  <li style="margin: 5px 0;">DATA retrieving and sorting in a finger click</li>
+                  <li style="margin: 5px 0;">Human performance training and knowledge leverage </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-wrapper" id="section-04">
+          <div class="content-row">
+            <div class="content-image">
+              <img src="img/step-1.png" alt="" />
+            </div>
+            <div class="content-content">
+              <h5 class="content-subtitle">
+                <span class="counter mb-5 pb-5">ARTICA iHRMA</span>
+              </h5>
+              <h2 class="content-title">
+                <span>INTELLIGENT HUMAN RESOIURCE MANAGEMENT AGENT</span>
+              </h2>
+              <p class="content-copy">
+                ARTICA iHRMA can help you simplify the complex task of managing your workforce benefits and make
+                planning and decision-making easier for your employees. iHRMA can Set up your benefit plans once,
+                driving enrollment and deductions throughout the system.
+                Another function of iHRMA is to simply hiring process, on boarding and train employees to deliver their
+                best performance for the organization, providing reliable automated evaluation platform, performance
+                follow-up and reports generation.
+              </p>
+              <div class="content-copy">
+                <p>Some common <span class="highlight">iHRMA </span> implementations include:</p>
+                <ul style="margin-left: 40px;  list-style-type: disc;">
+                  <li style="margin: 5px 0;">Recruitment and hiring</li>
+                  <li style="margin: 5px 0;">Onboarding and training</li>
+                  <li style="margin: 5px 0;">Employee service and self-service</li>
+                  <li style="margin: 5px 0;">Reporting and analytics</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-wrapper" id="section-05">
+          <div class="content-row">
+            <div class="content-image">
+              <img src="img/step-2.png" alt="" />
+            </div>
+            <div class="content-content">
+              <h5 class="content-subtitle">
+                <span class="counter mb-5 pb-5">Artica iCMA </span>
+              </h5>
+              <h2 class="content-title">
+                <span>INTELLIGENT CLINIC MANAGEMENT</span>
+              </h2>
+              <p class="content-copy">
+                Determining what level of hiker you are can be an important
+                tool when planning future hikes. This hiking level guide will
+                help you plan hikes according to different hike ratings set by
+                various websites like All Trails and Modern Hiker. What type
+                of hiker are you – novice, moderate, advanced moderate,
+                expert, or expert backpacker?
+              </p>
+              <!-- <div class="content-copy">
+                <p>Some common <span class="highlight">iHRMA </span> implementations include:</p>
+                <ul style="margin-left: 20px;  list-style-type: disc;">
+                  <li style="margin: 5px 0;">Recruitment and hiring</li>
+                  <li style="margin: 5px 0;">Onboarding and training</li>
+                  <li style="margin: 5px 0;">Employee service and self-service</li>
+                  <li style="margin: 5px 0;">Reporting and analytics</li>
+                </ul>
+              </div> -->
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
-  <!-- section how it works -->
+  <!-- display modules -->
 
   <!-- start integration section  -->
-  <article class="integration">
-    <!-- usecase -->
-    <section class="usecases">
-      <h2 class="section-title">USECASES</h2>
-      <p class="section-description">Here are some of the ways you can use Chatbase.</p>
-
-      <div class="usecases-container">
-        <div class="usecase-card">
-          <h3>Customer Support</h3>
-          <p>Experience swift query resolutions, available 24/7, with personalized assistance tailored to your
-            customers' needs.</p>
-          <div class="usecase-image">
-            <img src="img/usecase1.webp" alt="Customer Support Chat" />
-          </div>
-        </div>
-
-        <div class="usecase-card">
-          <h3>Lead Generation</h3>
-          <p>Set your chatbot to collect leads and qualify them, all while providing a personalized experience to your
-            customers.</p>
-          <div class="usecase-image">
-            <img src="img/usecase2.webp" alt="Lead Generation Chat" />
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- usecase -->
+  <article class="integration" id="demo">
+    <!-- demo -->
     <section class="demo-now-section">
       <!-- info -->
       <article class="info">
@@ -706,13 +361,36 @@
       <article class="chat-demo-now">
         <!-- section chat -->
         <main class="chat-section">
-          <!-- chat Demo -->
+          <!-- chat Demo messages -->
           <div class="chat-container" id="chat-container">
+            <div class="message human-message">
+              <div class="avatar human-avatar">U</div>
+              <div class="message-content">hello</div>
+            </div>
+            <div class="message assistant-message">
+              <div class="avatar assistant-avatar">AI</div>
+              <div class="message-content">I've received your message. How can I help you further?</div>
+            </div>
+            <div class="message human-message">
+              <div class="avatar human-avatar">U</div>
+              <div class="message-content">how are you ?</div>
+            </div>
+            <div class="message assistant-message">
+              <div class="avatar assistant-avatar">AI</div>
+              <div class="message-content">I've received your message. How can I help you further?</div>
+            </div>
+            <div class="message assistant-message">
+              <div class="avatar assistant-avatar">AI</div>
+              <div class="message-content">I've received your message. How can I help you further?</div>
+            </div>
+          </div>
+          <!-- chat Demo -->
+          <!-- <div class="chat-container" id="chat-container">
             <div class="no-data">
               <i class="fas fa-comments"></i>
               <h1>Demo Now </h1>
             </div>
-          </div>
+          </div> -->
 
           <!-- Input section -->
           <div class="input-container">
@@ -747,147 +425,26 @@
         </div>
       </div>
     </section>
-    <!-- subscribe -->
-    <section class="subscribe-section">
-      <h1 class="subscribe-title">Subscribe to ARTICA AI for exclusive artistic content or Click to view plans!</h1>
-      <a href="price.html" class="cta-button">Subscribe Now <i class="fa-solid fa-arrow-right p-2"></i> </a>
-    </section>
+
   </article>
   <!-- end integration section  -->
 
-  <!-- start services section  -->
-  <!-- <section class="section-services">
-    <div class="container">
-      <div class="row justify-content-center text-center">
-        <div class="col-md-10 col-lg-8">
-          <div class="header-section">
-            <h2 class="title">Our Services</h2>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 col-lg-4">
-          <div class="single-service">
-            <div class="content">
-              <span class="icon">
-                <i class="fab fa-battle-net"></i>
-              </span>
-              <h3 class="title">Information Technology</h3>
-              <p class="description">Unburden your IT support team and adapt to the changing employee expectations by
-                delivering support that is
-                instant, reliable, and contextual.</p>
-            </div>
-            <span class="circle-before"></span>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="single-service">
-            <div class="content">
-              <span class="icon">
-                <i class="fab fa-asymmetrik"></i>
-              </span>
-              <h3 class="title">Human Resource </h3>
-              <p class="description">Get more done with less busy work. Let Assist AI focus on instantly resolving yet
-                another repetitive request
-                while you focus on what really matters.</p>
-            </div>
-            <span class="circle-before"></span>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="single-service">
-            <div class="content">
-              <span class="icon">
-                <i class="fa-solid fa-chart-simple"></i>
-              </span>
-              <h3 class="title">Marketing </h3>
-              <p class="description">MBoost your marketing efficiency by automating repetitive tasks and focusing on
-                strategy and creativity.</p>
-            </div>
-            <span class="circle-before"></span>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="single-service">
-            <div class="content">
-              <span class="icon">
-                <i class="fab fa-500px"></i>
-              </span>
-              <h3 class="title">Sales </h3>
-              <p class="description">Enhance your sales processes with automation and focus on closing deals and
-                building relationships.</p>
-            </div>
-            <span class="circle-before"></span>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="single-service">
-            <div class="content">
-              <span class="icon">
-                <i class="fa-solid fa-headset"></i>
-              </span>
-              <h3 class="title">Customer Support</h3>
-              <p class="description">Provide exceptional customer support by automating responses and managing queries
-                effectively.</p>
-            </div>
-            <span class="circle-before"></span>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="single-service">
-            <div class="content">
-              <span class="icon">
-                <i class="fas fa-laptop-code"></i>
-              </span>
-              <h3 class="title">Sales</h3>
-              <p class="description">Enhance your sales processes with automation and focus on closing deals and
-                building relationships.</p>
-            </div>
-            <span class="circle-before"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-  <!-- END SECTION SERVICES -->
-
-  <!-- Start deployment section -->
-  <article class="deployment">
-    <section class="deployment-section">
-      <div class="header-section">
-        <h2 class="title">Flexible Deployment</h2>
-      </div>
-      <div class="row justify-content-start">
-        <div class="col-md-6 col-sm-6 deployment-item">
-          <img src="img/deployment2.png" alt="On-premise" loading="lazy" />
-          <h3 class="deployment-title">On-premise</h3>
-          <p class="deployment-description">If you require more control over your data, tighter security, or flexible
-            integration with your backend systems, we got you covered.</p>
-        </div>
-        <div class="col-md-6 col-sm-6 deployment-item">
-          <img src="img/deployment1.png" alt="Hybrid and Private Cloud Hosting" loading="lazy" />
-          <h3 class="deployment-title">Hybrid and Private Cloud Hosting</h3>
-          <p class="deployment-description">WideBot offers deployment on a private cloud model and a hybrid hosting
-            model too. So you get the best of both worlds!</p>
-        </div>
-      </div>
-    </section>
-  </article>
-  <!-- End deployment section -->
 
   <!-- start requset-demo section  -->
-  <section class="requsetDemo-section">
+  <section class="requsetDemo-section" id="request">
     <div class="row justify-content-start">
       <div class="col-md-12 col-sm-6 requsetDemo-item ">
         <div class="header-section">
           <!-- <h2 class="title text-white">Let’s Start Our Collaboration Now</h2> -->
           <h2 class="title">Let’s Start Our Collaboration Now</h2>
         </div>
-        <p class="requsetDemo-description">Contact us today for more information and inquiries about WideBot’s
+        <p class="requsetDemo-description text-center">Contact us today for more information and inquiries about
+          WideBot’s
           intelligent solutions for business growth and development.
         </p>
-        <div class="effect-card">
-          <a href="request_demo.html" class="service-button wobble">Request Demo</a>
+        <div class="effect-card d-flex justify-content-center align-items-center ">
+          <a href="https://wa.me/+201033993202" target="_blank" class="btn btn-primary btn-request d-block">Request a
+            Demo</a>
         </div>
       </div>
     </div>
@@ -956,285 +513,44 @@
   </footer>
   <!-- end footer section  -->
 
-  <!-- Back to Top -->
-  <a href="#" class="btn btn-lg-square back-to-top"><i class="fa-solid fa-arrow-up"></i></a>
-  <!-- Links for part how it works -->
-  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+
+
+  <!-- JavaScript Libraries -->
+  <!-- scripts abbreviation for page our story only  -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.0/bundled/lenis.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
   <script src="js/script.js"></script>
-
+  <script src="js/chat.js"></script>
+  <script src="js/story.js"></script>
   <script>
-    // section how it works in large screens 
+    // text animation
     document.addEventListener("DOMContentLoaded", function () {
-      'use strict';
+      let words = document.querySelectorAll(".sp-words-wrapper b");
+      let currentIndex = 0;
 
-      gsap.registerPlugin(ScrollTrigger);
+      function changeWord() {
+        let current = words[currentIndex];
+        let nextIndex = (currentIndex + 1) % words.length;
+        let next = words[nextIndex];
 
-      // lenis smooth scrolling
-      const lenis = new Lenis({
-        duration: 1.2,
-      });
-      function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      };
-      requestAnimationFrame(raf);
+        current.classList.remove("is-visible");
+        current.classList.add("is-hidden");
 
-      // integration lenis GASP ScrollTrigger
-      let workInfoItems = document.querySelectorAll('.work__photo-item');
-      workInfoItems.forEach(function (item, index) {
-        item.style.zIndex = workInfoItems.length - index;
-      });
-      gsap.set(".work__photo-item", {
-        clipPath: function () {
-          return "inset(0px 0px 0px 0px)";
-        }
-      });
-      const animation = gsap.to(".work__photo-item:not(:last-child)", {
-        clipPath: function () {
-          return "inset(0px 0px 100% 0px)";
-        },
-        stagger: .5,
-        ease: "none",
-      });
+        next.classList.remove("is-hidden");
+        next.classList.add("is-visible");
 
-      ScrollTrigger.create({
-        trigger: ".work",
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 1,
-        animation: animation,
-      });
+        currentIndex = nextIndex;
+      }
+
+      setInterval(changeWord, 2500); //every two seconds
     });
-    // section how it works in small screens
-    // How it works
-    document.addEventListener("DOMContentLoaded", () => {
-      const steps = document.querySelectorAll(".step");
-      const images = document.querySelectorAll(".image-card");
 
-      steps.forEach((step) => {
-        step.addEventListener("click", () => {
-          // Remove 'active' class from all steps and images
-          steps.forEach((s) => s.classList.remove("active"));
-          images.forEach((img) => img.classList.remove("active"));
 
-          // Add 'active' class to the clicked step and its corresponding image
-          step.classList.add("active");
-          const targetImage = document.querySelector(step.dataset.target);
-          targetImage.classList.add("active");
-        });
-      });
-    });
 
   </script>
-
-  <script>
-    const form = document.getElementById('chat-form');
-    const textarea = document.getElementById('chat-input');
-    const sendButton = document.getElementById('send-button');
-    const chatContainer = document.getElementById('chat-container');
-    const fileInput = document.getElementById('file-input');
-    const uploadTrigger = document.getElementById('upload-trigger');
-    const filePreviewContainer = document.getElementById('file-preview-container');
-    const noData = document.querySelector('.no-data');
-
-    let uploadedFiles = new Set();
-
-    function adjustTextareaHeight() {
-      textarea.style.height = 'auto';
-      textarea.style.height = `${Math.min(textarea.scrollHeight, 200)}px`;
-    }
-
-    function updateButtonState() {
-      sendButton.disabled = !textarea.value.trim() && uploadedFiles.size === 0;
-    }
-
-    function addMessage(content, isHuman = true) {
-      if (noData) {
-        noData.style.display = 'none';
-      }
-
-      const messageDiv = document.createElement('div');
-      messageDiv.className = `message ${isHuman ? 'human-message' : 'assistant-message'}`;
-
-      const avatar = document.createElement('div');
-      avatar.className = `avatar ${isHuman ? 'human-avatar' : 'assistant-avatar'}`;
-      avatar.textContent = isHuman ? 'U' : 'AI';
-
-      const messageContent = document.createElement('div');
-      messageContent.className = 'message-content';
-      messageContent.textContent = content;
-
-      messageDiv.appendChild(avatar);
-      messageDiv.appendChild(messageContent);
-      chatContainer.appendChild(messageDiv);
-
-      chatContainer.scrollTop = chatContainer.scrollHeight;
-    }
-
-    function formatFileSize(bytes) {
-      if (bytes < 1024) return bytes + ' B';
-      else if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
-      else return (bytes / 1048576).toFixed(1) + ' MB';
-    }
-
-    function createFilePreview(file) {
-      const previewDiv = document.createElement('div');
-      previewDiv.className = 'file-preview';
-      previewDiv.innerHTML = `
-      <i class="fas fa-file"></i>
-      <span>${file.name} (${formatFileSize(file.size)})</span>
-      <button type="button" title="Remove file">
-        <i class="fas fa-times"></i>
-      </button>
-      <div class="upload-progress">
-        <div class="upload-progress-bar" style="width: 0%"></div>
-      </div>
-    `;
-
-      const removeButton = previewDiv.querySelector('button');
-      removeButton.onclick = () => {
-        uploadedFiles.delete(file);
-        previewDiv.remove();
-        updateButtonState();
-      };
-
-      // Simulate upload progress
-      const progressBar = previewDiv.querySelector('.upload-progress-bar');
-      let progress = 0;
-      const interval = setInterval(() => {
-        progress += Math.random() * 30;
-        if (progress >= 100) {
-          progress = 100;
-          clearInterval(interval);
-          progressBar.parentElement.style.display = 'none';
-        }
-        progressBar.style.width = `${progress}%`;
-      }, 500);
-
-      return previewDiv;
-    }
-
-    uploadTrigger.addEventListener('click', () => {
-      fileInput.click();
-    });
-
-    fileInput.addEventListener('change', () => {
-      Array.from(fileInput.files).forEach(file => {
-        uploadedFiles.add(file);
-        filePreviewContainer.appendChild(createFilePreview(file));
-      });
-      fileInput.value = '';
-      updateButtonState();
-    });
-
-    textarea.addEventListener('input', () => {
-      adjustTextareaHeight();
-      updateButtonState();
-    });
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const message = textarea.value.trim();
-      const files = Array.from(uploadedFiles);
-
-      if (message || files.length > 0) {
-        let content = message;
-        if (files.length > 0) {
-          content += '\nUploaded files: ' + files.map(f => f.name).join(', ');
-        }
-
-        addMessage(content, true);
-        textarea.value = '';
-        textarea.style.height = 'auto';
-        uploadedFiles.clear();
-        filePreviewContainer.innerHTML = '';
-        updateButtonState();
-
-        // Simulate Claude's response
-        setTimeout(() => {
-          addMessage("I've received your message" + (files.length ? " and files" : "") + ". How can I help you further?", false);
-        }, 1000);
-      }
-    });
-
-    // Handle Ctrl/Cmd + Enter to submit
-    textarea.addEventListener('keydown', (e) => {
-      if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
-        e.preventDefault();
-        form.dispatchEvent(new Event('submit'));
-      }
-    });
-
-    // Handle drag and drop
-    document.addEventListener('dragover', (e) => {
-      e.preventDefault();
-    });
-
-    document.addEventListener('drop', (e) => {
-      e.preventDefault();
-      if (e.dataTransfer.files.length > 0) {
-        Array.from(e.dataTransfer.files).forEach(file => {
-          uploadedFiles.add(file);
-          filePreviewContainer.appendChild(createFilePreview(file));
-        });
-        updateButtonState();
-      }
-    });
-
-    // Add new function to handle message sending
-    function sendMessage() {
-      const message = textarea.value.trim();
-      const files = Array.from(uploadedFiles);
-
-      if (message || files.length > 0) {
-        let content = message;
-        if (files.length > 0) {
-          content += '\nUploaded files: ' + files.map(f => f.name).join(', ');
-        }
-
-        addMessage(content, true);
-        textarea.value = '';
-        textarea.style.height = 'auto';
-        uploadedFiles.clear();
-        filePreviewContainer.innerHTML = '';
-        updateButtonState();
-
-        // Simulate Claude's response
-        setTimeout(() => {
-          addMessage("I've received your message" + (files.length ? " and files" : "") + ". How can I help you further?", false);
-        }, 1000);
-      }
-    }
-
-    // Update the textarea keydown event listener
-    textarea.addEventListener('keydown', (e) => {
-      // Handle Enter key
-      if (e.key === 'Enter') {
-        // If Shift key is not pressed, send the message
-        if (!e.shiftKey) {
-          e.preventDefault();
-          sendMessage();
-        }
-      }
-      // Keep the existing Ctrl/Cmd + Enter handler
-      else if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
-        e.preventDefault();
-        sendMessage();
-      }
-    });
-
-    // Update form submit handler to use the new sendMessage function
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      sendMessage();
-    });
-
-    // Rest of the script remains the same
-  </script>
-
 </body>
 
 </html>
