@@ -548,6 +548,22 @@
       setInterval(changeWord, 2500); //every two seconds
     });
 
+    // 
+    document.querySelectorAll('.menu-main a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault(); // منع السلوك الافتراضي
+
+        const targetID = link.getAttribute("href"); // الحصول على الـ ID
+        const targetSection = document.querySelector(targetID);
+
+        if (targetSection) {
+          lenis.scrollTo(targetSection, {
+            duration: 1, // مدة التمرير
+            easing: (t) => t, // سلاسة التمرير
+          });
+        }
+      });
+    });
 
 
   </script>
