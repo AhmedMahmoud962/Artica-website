@@ -25,6 +25,7 @@ gsap.fromTo(
     autoAlpha: 0,
     y: 100,
     stagger: 0.2,
+    immediateRender: false, // Prevents animation from triggering before refresh
   },
   {
     autoAlpha: 1,
@@ -32,6 +33,7 @@ gsap.fromTo(
     stagger: 0.2,
   }
 );
+
 gsap.fromTo(
   sliderProgress,
   {
@@ -53,7 +55,6 @@ gsap
       end: "bottom top",
       scrub: 0.2,
       invalidateOnRefresh: true,
-      // markers: true,
     },
   })
   .to(
@@ -70,13 +71,6 @@ gsap
     },
     "0"
   )
-  // .to(
-  //   ".man-standing",
-  //   {
-  //     y: -100,
-  //   },
-  //   "0"
-  // )
   .to(
     ".hero-content-our-story",
     {
@@ -87,6 +81,7 @@ gsap
   );
 
 const contentWrapper = document.querySelectorAll(".content-row");
+
 contentWrapper.forEach((contentWrapper) => {
   const imageWrapper = contentWrapper.querySelector(".content-image");
   const image = imageWrapper.querySelector("img");
@@ -107,7 +102,6 @@ contentWrapper.forEach((contentWrapper) => {
         scrub: 0.05,
         pin: contentWrapper,
         invalidateOnRefresh: true,
-        // markers: true,
       },
     })
     .fromTo(
@@ -116,6 +110,7 @@ contentWrapper.forEach((contentWrapper) => {
         autoAlpha: 0,
         y: 100,
         stagger: 0.2,
+        immediateRender: false,
       },
       {
         autoAlpha: 1,
@@ -138,14 +133,22 @@ contentWrapper.forEach((contentWrapper) => {
       image,
       {
         autoAlpha: 0,
-        scale: .2,
+        scale: 0.2,
       },
       {
         autoAlpha: 1,
         scale: 1,
+        onComplete: () => {
+          ScrollTrigger.refresh();
+        },
       },
       "0"
     );
+});
+
+// تحديث الـ ScrollTrigger عند تحميل الصفحة بالكامل
+window.addEventListener("load", () => {
+  ScrollTrigger.refresh();
 });
 
 gsap.to(".slider-progress-bar", {
